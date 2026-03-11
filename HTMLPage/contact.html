@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PC Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <link rel="stylesheet" href="../CSSPage/contact.css">
+</head>
+<body>
+
+<header class="navbar"></header>
+<script>document.addEventListener('DOMContentLoaded', () => generateNavbar('contact'));</script>
+
+<section class="contact-section">
+    <h1>Contact Us</h1>
+    <p>Have questions or need help building your PC?</p>
+    <p>We're here to help!</p>
+
+    <div class="contact-info-box">
+        <p>📧 <strong>Email:</strong> support@pcbuilder.com</p>
+        <p>📱 <strong>Phone:</strong> +970 59 000 0000</p>
+        <p>📍 <strong>Location:</strong> Nablus, Palestine</p>
+    </div>
+
+    <h2>Send us a message</h2>
+
+    <form class="contact-form" id="contactForm">
+        <input type="text" placeholder="Your Name *" required>
+        <input type="email" placeholder="Your Email *" required>
+        <textarea placeholder="Your Message *" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>🖥️ PC Builder</h3>
+            <p>Build your dream PC with premium components and expert guidance.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="build.html">Builder</a>
+            <a href="trending.html">Trending</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>📧 support@pcbuilder.com</p>
+            <p>📞 +970-599-123456</p>
+            <p>📍 Nablus, Palestine</p>
+        </div>
+        <div class="footer-section">
+            <h3>Team</h3>
+            <p>Akram Musallam</p>
+            <p>Basel Barakat</p>
+            <p>An-Najah National University</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 PC Builder. All rights reserved. | An-Najah National University, Palestine</p>
+    </div>
+</footer>
+
+<script src="../Js/utils.js"></script>
+<script src="../Js/ai-chat.js"></script>
+<script src="../Js/contact.js"></script>
+</body>
+</html>

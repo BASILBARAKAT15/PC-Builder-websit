@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Supplies</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <link rel="stylesheet" href="../CSSPage/PowerSupply.css">
+</head>
+<body>
+
+<header class="navbar"></header>
+<script>document.addEventListener('DOMContentLoaded', () => generateNavbar('build'));</script>
+
+<section class="psu-hero">
+    <h1>⚡ Top Power Supplies</h1>
+    <p>Reliable PSUs for stable and safe gaming and workstation builds</p>
+</section>
+
+<section class="section-box">
+    
+    <div class="filter-bar">
+        <input type="text" class="search-input" placeholder="🔍 Search products..." oninput="filterProducts(this.value)">
+        <select class="filter-select" onchange="sortProducts(this.value)">
+            <option value="">Sort by</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name: A-Z</option>
+        </select>
+    </div>
+
+    <div class="grid">
+
+        
+        <div class="psu-card" data-name="Corsair RM850x 850W" data-specs="{&quot;Brand&quot;: &quot;Corsair&quot;, &quot;Wattage&quot;: &quot;850W&quot;, &quot;Efficiency&quot;: &quot;80+ Gold&quot;, &quot;Modular&quot;: &quot;Full&quot;, &quot;Fan Size&quot;: &quot;135mm&quot;, &quot;Fan Type&quot;: &quot;Zero RPM Mode&quot;, &quot;Protection&quot;: &quot;OVP/UVP/OCP/SCP/OTP&quot;, &quot;ATX Version&quot;: &quot;ATX 3.0&quot;, &quot;Warranty&quot;: &quot;10 Years&quot;, &quot;Cables&quot;: &quot;Flat Black&quot;}" data-price="150">
+            <img src="../Image/Corsair RM850x 850W.jfif" alt="Corsair RM850x">
+            <h3>Corsair RM850x 850W</h3>
+            <p>High-efficiency modular PSU for powerful builds</p>
+            <span class="price">$150</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="psu-card" data-name="EVGA SuperNOVA 750W" data-image="../Image/EVGA SuperNOVA 750W.jfif" data-specs="{&quot;Brand&quot;: &quot;EVGA&quot;, &quot;Wattage&quot;: &quot;750W&quot;, &quot;Efficiency&quot;: &quot;80+ Gold&quot;, &quot;Modular&quot;: &quot;Full&quot;, &quot;Fan&quot;: &quot;135mm FDB&quot;, &quot;Protection&quot;: &quot;Full Suite&quot;, &quot;Warranty&quot;: &quot;10 Years&quot;}" data-price="130">
+            <img src="../Image/EVGA SuperNOVA 750W.jfif" alt="EVGA SuperNOVA 750W">
+            <h3>EVGA SuperNOVA 750W</h3>
+            <p>Reliable fully modular PSU with 80+ Gold certification</p>
+            <span class="price">$130</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="psu-card" data-name="Seasonic Focus GX-650W" data-specs="{&quot;Brand&quot;: &quot;Seasonic&quot;, &quot;Wattage&quot;: &quot;650W&quot;, &quot;Efficiency&quot;: &quot;80+ Gold&quot;, &quot;Modular&quot;: &quot;Full&quot;, &quot;Fan Size&quot;: &quot;120mm&quot;, &quot;Fan Type&quot;: &quot;FDB Hybrid Silent&quot;, &quot;Protection&quot;: &quot;OVP/UVP/OCP/SCP/OTP/OPP&quot;, &quot;ATX Version&quot;: &quot;ATX 2.0&quot;, &quot;Warranty&quot;: &quot;10 Years&quot;, &quot;Cables&quot;: &quot;Flat Black&quot;}" data-price="120">
+            <img src="../Image/Seasonic Focus GX-650W.jfif" alt="Seasonic Focus GX-650W">
+            <h3>Seasonic Focus GX-650W</h3>
+            <p>Compact and efficient modular PSU for mid-range builds</p>
+            <span class="price">$120</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="psu-card" data-name="Corsair CX650M 650W" data-image="../Image/Corsair CX650M 650W.jfif" data-specs="{&quot;Brand&quot;: &quot;Corsair&quot;, &quot;Wattage&quot;: &quot;650W&quot;, &quot;Efficiency&quot;: &quot;80+ Bronze&quot;, &quot;Modular&quot;: &quot;Semi&quot;, &quot;Fan&quot;: &quot;120mm&quot;, &quot;Protection&quot;: &quot;OVP/UVP/OCP/SCP&quot;, &quot;Warranty&quot;: &quot;5 Years&quot;}" data-price="90">
+            <img src="../Image/Corsair CX650M 650W.jfif" alt="Corsair CX650M">
+            <h3>Corsair CX650M 650W</h3>
+            <p>Affordable semi-modular PSU with stable performance</p>
+            <span class="price">$90</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="psu-card" data-name="Cooler Master V750 Gold" data-specs="{&quot;Brand&quot;: &quot;Cooler Master&quot;, &quot;Wattage&quot;: &quot;750W&quot;, &quot;Efficiency&quot;: &quot;80+ Gold&quot;, &quot;Modular&quot;: &quot;Full&quot;, &quot;Fan Size&quot;: &quot;135mm&quot;, &quot;Fan Type&quot;: &quot;FDB Semi-Fanless&quot;, &quot;Protection&quot;: &quot;OVP/UVP/OCP/SCP/OTP/OPP&quot;, &quot;ATX Version&quot;: &quot;ATX 2.0&quot;, &quot;Warranty&quot;: &quot;10 Years&quot;, &quot;Cables&quot;: &quot;Flat Black&quot;}" data-price="140">
+            <img src="../Image/Cooler Master V750 Gold.jfif" alt="Cooler Master V750">
+            <h3>Cooler Master V750 Gold</h3>
+            <p>High-quality fully modular PSU for gaming rigs</p>
+            <span class="price">$140</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="psu-card" data-name="Thermaltake Toughpower 850W" data-image="../Image/Thermaltake Toughpower 850W.jfif" data-specs="{&quot;Brand&quot;: &quot;Thermaltake&quot;, &quot;Wattage&quot;: &quot;850W&quot;, &quot;Efficiency&quot;: &quot;80+ Gold&quot;, &quot;Modular&quot;: &quot;Full&quot;, &quot;Fan&quot;: &quot;140mm&quot;, &quot;Protection&quot;: &quot;Full Suite&quot;, &quot;Warranty&quot;: &quot;10 Years&quot;}" data-price="160">
+            <img src="../Image/Thermaltake Toughpower 850W.jfif" alt="Thermaltake Toughpower 850W">
+            <h3>Thermaltake Toughpower 850W</h3>
+            <p>Powerful PSU with high efficiency and stability</p>
+            <span class="price">$160</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="psu-card" data-name="Be Quiet! Straight Power 11 750W" data-specs="{&quot;Brand&quot;: &quot;Be Quiet!&quot;, &quot;Wattage&quot;: &quot;750W&quot;, &quot;Efficiency&quot;: &quot;80+ Gold&quot;, &quot;Modular&quot;: &quot;Full&quot;, &quot;Fan Size&quot;: &quot;135mm&quot;, &quot;Fan Type&quot;: &quot;Silent Wings 3&quot;, &quot;Protection&quot;: &quot;OVP/UVP/OCP/SCP/OTP&quot;, &quot;ATX Version&quot;: &quot;ATX 2.0&quot;, &quot;Warranty&quot;: &quot;5 Years&quot;, &quot;Cables&quot;: &quot;All Black&quot;}" data-price="155">
+            <img src="../Image/Be Quiet! Straight Power 11 750W.jfif" alt="Be Quiet! Straight Power 750W">
+            <h3>Be Quiet! Straight Power 11 750W</h3>
+            <p>Silent and efficient PSU with premium build quality</p>
+            <span class="price">$155</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="psu-card" data-name="NZXT C850 850W" data-image="../Image/NZXT C850 850W.jfif" data-specs="{&quot;Brand&quot;: &quot;NZXT&quot;, &quot;Wattage&quot;: &quot;850W&quot;, &quot;Efficiency&quot;: &quot;80+ Gold&quot;, &quot;Modular&quot;: &quot;Full&quot;, &quot;Fan&quot;: &quot;120mm Zero RPM&quot;, &quot;Protection&quot;: &quot;Full Suite&quot;, &quot;Warranty&quot;: &quot;10 Years&quot;}" data-price="170">
+            <img src="../Image/NZXT C850 850W.jfif" alt="NZXT C850">
+            <h3>NZXT C850 850W</h3>
+            <p>High-performance modular PSU for enthusiast builds</p>
+            <span class="price">$170</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 PC Builder. All rights reserved.</p>
+</footer>
+
+<script src="../Js/utils.js"></script>
+<script src="../Js/ai-chat.js"></script>
+<script src="../Js/PowerSupply.js"></script>
+
+</body>
+</html>

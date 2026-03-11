@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupons - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+<div class="admin-layout">
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-header"><h2>🖥️ PC Builder</h2><p>Admin Panel</p></div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+            <a href="orders.html"><span class="nav-icon">📦</span> Orders</a>
+            <a href="users.html"><span class="nav-icon">👥</span> Users</a>
+            <a href="products.html"><span class="nav-icon">🛍️</span> Products</a>
+            <a href="coupons.html" class="active"><span class="nav-icon">🎟️</span> Coupons</a>
+            <a href="../HTMLPage/index.html"><span class="nav-icon">🌐</span> View Store</a>
+        </nav>
+        <div class="sidebar-logout"><button onclick="adminLogout()">🚪 Logout</button></div>
+    </aside>
+
+    <main class="admin-main">
+        <div class="admin-header">
+            <h1>🎟️ Coupons Management</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+
+        
+        <div class="admin-form">
+            <h3>Add New Coupon</h3>
+            <div class="form-row">
+                <input type="text" id="couponCode" placeholder="Coupon Code (e.g. SAVE30)" style="text-transform:uppercase;">
+                <input type="number" id="couponDiscount" placeholder="Discount %" min="1" max="100">
+                <button class="btn btn-primary" onclick="addCoupon()">Add Coupon</button>
+            </div>
+        </div>
+
+        <div class="admin-table-container">
+            <div class="admin-table-header">
+                <h2>All Coupons</h2>
+                <span id="couponCount"></span>
+            </div>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Discount</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="couponsTableBody"></tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+<script src="../Js/utils.js"></script>
+<script src="admin.js"></script>
+<script>
+    checkAdminAccess();
+    loadCoupons();
+</script>
+</body>
+</html>

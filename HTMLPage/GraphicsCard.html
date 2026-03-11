@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Graphics Card - PC Builder</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <link rel="stylesheet" href="../CSSPage/GraphicsCard.css">
+</head>
+<body>
+
+<header class="navbar"></header>
+<script>document.addEventListener('DOMContentLoaded', () => generateNavbar('build'));</script>
+
+<section class="section-box">
+    <h1>Select Your Graphics Card</h1>
+
+    
+    <div class="filter-bar">
+        <input type="text" class="search-input" placeholder="🔍 Search products..." oninput="filterProducts(this.value)">
+        <select class="filter-select" onchange="sortProducts(this.value)">
+            <option value="">Sort by</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name: A-Z</option>
+        </select>
+    </div>
+
+    <div class="grid">
+
+        
+        <div class="comp-card" data-name="NVIDIA RTX 4060" data-specs="{&quot;Brand&quot;: &quot;NVIDIA&quot;, &quot;Architecture&quot;: &quot;Ada Lovelace&quot;, &quot;VRAM&quot;: &quot;8GB GDDR6&quot;, &quot;Bus Width&quot;: &quot;128-bit&quot;, &quot;Boost Clock&quot;: &quot;2460 MHz&quot;, &quot;CUDA Cores&quot;: &quot;3072&quot;, &quot;Ray Tracing&quot;: &quot;Yes (3rd Gen)&quot;, &quot;DLSS&quot;: &quot;3.0&quot;, &quot;TDP&quot;: &quot;115W&quot;, &quot;Power Connector&quot;: &quot;1x 8-pin&quot;, &quot;Output&quot;: &quot;HDMI 2.1, 3x DP 1.4a&quot;, &quot;Recommended PSU&quot;: &quot;550W&quot;, &quot;Best For&quot;: &quot;1080p Gaming&quot;}" data-price="299" data-image="../Image/NVIDIA RTX 4060.jfif">
+            <img src="../Image/NVIDIA RTX 4060.jfif" alt="NVIDIA RTX 4060">
+            <h3>NVIDIA RTX 4060</h3>
+            <ul>
+                <li>8GB GDDR6</li>
+                <li>DLSS 3 Support</li>
+                <li>Great for 1080p Gaming</li>
+            </ul>
+            <p class="price">$299</p>
+            <button class="select-btn">Select</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="NVIDIA RTX 4070" data-specs="{&quot;Brand&quot;: &quot;NVIDIA&quot;, &quot;Architecture&quot;: &quot;Ada Lovelace&quot;, &quot;VRAM&quot;: &quot;12GB GDDR6X&quot;, &quot;Bus&quot;: &quot;192-bit&quot;, &quot;Boost Clock&quot;: &quot;2475 MHz&quot;, &quot;CUDA Cores&quot;: &quot;5888&quot;, &quot;Ray Tracing&quot;: &quot;Yes 3rd Gen&quot;, &quot;DLSS&quot;: &quot;3.0&quot;, &quot;TDP&quot;: &quot;200W&quot;, &quot;Recommended PSU&quot;: &quot;650W&quot;, &quot;Best For&quot;: &quot;1440p&quot;}" data-price="549" data-image="../Image/NVIDIA RTX 4070.jfif">
+            <img src="../Image/NVIDIA RTX 4070.jfif" alt="NVIDIA RTX 4070">
+            <h3>NVIDIA RTX 4070</h3>
+            <ul>
+                <li>12GB GDDR6X</li>
+                <li>Ray Tracing + DLSS 3</li>
+                <li>1440p Ultra Gaming</li>
+            </ul>
+            <p class="price">$549</p>
+            <button class="select-btn">Select</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="NVIDIA RTX 4080" data-specs="{&quot;Brand&quot;: &quot;NVIDIA&quot;, &quot;Architecture&quot;: &quot;Ada Lovelace&quot;, &quot;VRAM&quot;: &quot;16GB GDDR6X&quot;, &quot;Bus Width&quot;: &quot;256-bit&quot;, &quot;Boost Clock&quot;: &quot;2505 MHz&quot;, &quot;CUDA Cores&quot;: &quot;9728&quot;, &quot;Ray Tracing&quot;: &quot;Yes (3rd Gen)&quot;, &quot;DLSS&quot;: &quot;3.0&quot;, &quot;TDP&quot;: &quot;320W&quot;, &quot;Power Connector&quot;: &quot;1x 16-pin&quot;, &quot;Output&quot;: &quot;HDMI 2.1, 3x DP 1.4a&quot;, &quot;Recommended PSU&quot;: &quot;750W&quot;, &quot;Best For&quot;: &quot;4K Gaming&quot;}" data-price="1199" data-image="../Image/NVIDIA RTX 4080.jfif">
+            <img src="../Image/NVIDIA RTX 4080.jfif" alt="NVIDIA RTX 4080">
+            <h3>NVIDIA RTX 4080</h3>
+            <ul>
+                <li>16GB GDDR6X</li>
+                <li>Extreme Ray Tracing</li>
+                <li>4K Gaming Beast</li>
+            </ul>
+            <p class="price">$1199</p>
+            <button class="select-btn">Select</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="NVIDIA RTX 4090" data-specs="{&quot;Brand&quot;: &quot;NVIDIA&quot;, &quot;Architecture&quot;: &quot;Ada Lovelace&quot;, &quot;VRAM&quot;: &quot;24GB GDDR6X&quot;, &quot;Bus&quot;: &quot;384-bit&quot;, &quot;Boost Clock&quot;: &quot;2520 MHz&quot;, &quot;CUDA Cores&quot;: &quot;16384&quot;, &quot;Ray Tracing&quot;: &quot;Yes 3rd Gen&quot;, &quot;DLSS&quot;: &quot;3.0&quot;, &quot;TDP&quot;: &quot;450W&quot;, &quot;Recommended PSU&quot;: &quot;850W&quot;, &quot;Best For&quot;: &quot;4K Ultra/AI&quot;}" data-price="1599" data-image="../Image/NVIDIA RTX 4090.jfif">
+            <img src="../Image/NVIDIA RTX 4090.jfif" alt="NVIDIA RTX 4090">
+            <h3>NVIDIA RTX 4090</h3>
+            <ul>
+                <li>24GB GDDR6X</li>
+                <li>Best GPU in the World</li>
+                <li>Ultimate 4K & 8K</li>
+            </ul>
+            <p class="price">$1599</p>
+            <button class="select-btn">Select</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="AMD RX 7600" data-specs="{&quot;Brand&quot;: &quot;AMD&quot;, &quot;Architecture&quot;: &quot;RDNA 3&quot;, &quot;VRAM&quot;: &quot;8GB GDDR6&quot;, &quot;Bus Width&quot;: &quot;128-bit&quot;, &quot;Boost Clock&quot;: &quot;2655 MHz&quot;, &quot;Stream Processors&quot;: &quot;2048&quot;, &quot;Ray Tracing&quot;: &quot;Yes (2nd Gen)&quot;, &quot;FSR&quot;: &quot;3.0&quot;, &quot;TDP&quot;: &quot;165W&quot;, &quot;Power Connector&quot;: &quot;1x 8-pin&quot;, &quot;Output&quot;: &quot;HDMI 2.1, 3x DP 2.1&quot;, &quot;Recommended PSU&quot;: &quot;550W&quot;, &quot;Best For&quot;: &quot;1080p Gaming&quot;}" data-price="269" data-image="../Image/AMD RX 7600.jfif">
+            <img src="../Image/AMD RX 7600.jfif" alt="AMD RX 7600">
+            <h3>AMD RX 7600</h3>
+            <ul>
+                <li>8GB GDDR6</li>
+                <li>RDNA 3 Architecture</li>
+                <li>1080p High FPS</li>
+            </ul>
+            <p class="price">$269</p>
+            <button class="select-btn">Select</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="AMD RX 7700 XT" data-specs="{&quot;Brand&quot;: &quot;AMD&quot;, &quot;Architecture&quot;: &quot;RDNA 3&quot;, &quot;VRAM&quot;: &quot;12GB GDDR6&quot;, &quot;Bus&quot;: &quot;192-bit&quot;, &quot;Boost Clock&quot;: &quot;2544 MHz&quot;, &quot;Stream Processors&quot;: &quot;3456&quot;, &quot;Ray Tracing&quot;: &quot;Yes 2nd Gen&quot;, &quot;FSR&quot;: &quot;3.0&quot;, &quot;TDP&quot;: &quot;245W&quot;, &quot;Recommended PSU&quot;: &quot;700W&quot;, &quot;Best For&quot;: &quot;1440p&quot;}" data-price="449" data-image="../Image/AMD RX 7700 XT.jfif">
+            <img src="../Image/AMD RX 7700 XT.jfif" alt="AMD RX 7700 XT">
+            <h3>AMD RX 7700 XT</h3>
+            <ul>
+                <li>12GB GDDR6</li>
+                <li>1440p Gaming</li>
+                <li>Ray Tracing Support</li>
+            </ul>
+            <p class="price">$449</p>
+            <button class="select-btn">Select</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="AMD RX 7800 XT" data-specs="{&quot;Brand&quot;: &quot;AMD&quot;, &quot;Architecture&quot;: &quot;RDNA 3&quot;, &quot;VRAM&quot;: &quot;16GB GDDR6&quot;, &quot;Bus Width&quot;: &quot;256-bit&quot;, &quot;Boost Clock&quot;: &quot;2430 MHz&quot;, &quot;Stream Processors&quot;: &quot;3840&quot;, &quot;Ray Tracing&quot;: &quot;Yes (2nd Gen)&quot;, &quot;FSR&quot;: &quot;3.0&quot;, &quot;TDP&quot;: &quot;263W&quot;, &quot;Power Connector&quot;: &quot;2x 8-pin&quot;, &quot;Output&quot;: &quot;HDMI 2.1, 3x DP 2.1&quot;, &quot;Recommended PSU&quot;: &quot;700W&quot;, &quot;Best For&quot;: &quot;1440p Ultra&quot;}" data-price="499" data-image="../Image/AMD RX 7800 XT.jfif">
+            <img src="../Image/AMD RX 7800 XT.jfif" alt="AMD RX 7800 XT">
+            <h3>AMD RX 7800 XT</h3>
+            <ul>
+                <li>16GB GDDR6</li>
+                <li>High FPS 1440p</li>
+                <li>Great Value GPU</li>
+            </ul>
+            <p class="price">$499</p>
+            <button class="select-btn">Select</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="AMD RX 7900 XTX" data-specs="{&quot;Brand&quot;: &quot;AMD&quot;, &quot;Architecture&quot;: &quot;RDNA 3&quot;, &quot;VRAM&quot;: &quot;24GB GDDR6&quot;, &quot;Bus&quot;: &quot;384-bit&quot;, &quot;Boost Clock&quot;: &quot;2500 MHz&quot;, &quot;Stream Processors&quot;: &quot;6144&quot;, &quot;Ray Tracing&quot;: &quot;Yes 2nd Gen&quot;, &quot;FSR&quot;: &quot;3.0&quot;, &quot;TDP&quot;: &quot;355W&quot;, &quot;Recommended PSU&quot;: &quot;800W&quot;, &quot;Best For&quot;: &quot;4K&quot;}" data-price="999" data-image="../Image/AMD RX 7900 XTX.jfif">
+            <img src="../Image/AMD RX 7900 XTX.jfif" alt="AMD RX 7900 XTX">
+            <h3>AMD RX 7900 XTX</h3>
+            <ul>
+                <li>24GB GDDR6</li>
+                <li>4K Ultra Gaming</li>
+                <li>Flagship AMD GPU</li>
+            </ul>
+            <p class="price">$999</p>
+            <button class="select-btn">Select</button>
+        </div>
+
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 25px; background: #111; color: #fff; margin-top: 60px;">
+    <p>© 2026 PC Builder. All rights reserved.</p>
+</footer>
+
+<script src="../Js/utils.js"></script>
+<script src="../Js/ai-chat.js"></script>
+<script src="../Js/GraphicsCard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+.hero {
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    color: #ddd;
+}
+
+.section-box {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.section-box h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+    color: var(--text-primary);
+}
+
+.section-box p {
+    margin-bottom: 40px;
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.comp-card {
+    background: var(--bg-card);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.comp-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.comp-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.comp-card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: var(--text-primary);
+}
+
+.comp-card ul {
+    list-style: none;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 10px 0;
+    text-align: left;
+}
+
+.comp-card ul li {
+    margin-bottom: 6px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.select-btn {
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.select-btn:hover {
+    background: #2563eb;
+}
+
+@media (max-width: 1024px) {
+    .hero-text h1 {
+        font-size: 36px;
+    }
+    .hero-text p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+            .grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .comp-card img {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .hero {
+        height: 300px;
+    }
+    .hero-text h1 {
+        font-size: 28px;
+    }
+    .hero-text p {
+        font-size: 16px;
+    }
+    .comp-card img {
+        width: 120px;
+        height: 120px;
+    }
+    .select-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}
+
+.trend-card {
+    background: var(--bg-card);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.trend-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.trend-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.trend-card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: var(--text-primary);
+}
+
+.trend-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.trend-card .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.buy-btn {
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .trend-card img {
+        width: 130px;
+        height: 130px;
+    }
+    .buy-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trend-card img {
+        width: 120px;
+        height: 120px;
+    }
+    .buy-btn {
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+}
+
+[data-theme="dark"] .comp-card ul {
+    color: #94a3b8;
+}

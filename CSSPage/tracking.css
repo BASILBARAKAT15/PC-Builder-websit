@@ -1,0 +1,120 @@
+.track-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 24px 0;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.track-header h2 {
+    font-size: 20px;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    margin: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--gray-200, #e5e7eb);
+    border-radius: 2px;
+}
+
+.timeline-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    position: relative;
+}
+
+.timeline-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gray-100, #f3f4f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    z-index: 1;
+    border: 3px solid var(--gray-200, #e5e7eb);
+    transition: 0.3s ease;
+    flex-shrink: 0;
+}
+
+.timeline-step.done .timeline-icon {
+    background: #d1fae5;
+    border-color: #10b981;
+}
+
+.timeline-step.current .timeline-icon {
+    background: #dbeafe;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 6px rgba(59,130,246,0.15);
+    animation: pulse 2s infinite;
+}
+
+.timeline-info h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.timeline-info p {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.timeline-step:not(.done) .timeline-info h3 {
+    color: var(--text-secondary);
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 6px rgba(59,130,246,0.15); }
+    50% { box-shadow: 0 0 0 12px rgba(59,130,246,0.05); }
+}
+
+.track-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px;
+    background: var(--gray-100, #f3f4f6);
+    border-radius: 10px;
+}
+
+.track-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    background: var(--bg-card, #fff);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+[data-theme="dark"] .timeline-step.done .timeline-icon {
+    background: #064e3b;
+}
+
+[data-theme="dark"] .timeline-step.current .timeline-icon {
+    background: #1e3a5f;
+}
+
+[data-theme="dark"] .track-item {
+    background: #1a2540;
+}

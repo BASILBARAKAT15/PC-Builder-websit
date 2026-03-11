@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Your PC</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <link rel="stylesheet" href="../CSSPage/build.css">
+</head>
+<body>
+
+<header class="navbar"></header>
+<script>document.addEventListener('DOMContentLoaded', () => generateNavbar('build'));</script>
+
+<section class="section-box" id="build-progress-section">
+    <h2>Build Progress</h2>
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p class="progress-text" id="progressText">0 / 8 components selected</p>
+    </div>
+    <div class="progress-steps" id="progressSteps"></div>
+</section>
+
+<section class="build-hero section-box">
+    <div class="build-text">
+        <h1>Brand New Beast</h1>
+        <ul>
+            <li>✔ Premium Custom PC</li>
+            <li>✔ Ready for High Performance</li>
+            <li>✔ RTX Series Graphics</li>
+            <li>✔ Ryzen Processor</li>
+        </ul>
+        <div class="price">$0</div>
+        <button class="btn btn-primary" id="customizeBtn">Customize</button>
+        <button class="btn btn-outline" onclick="resetBuild()" style="margin-left: 10px;">Reset Build</button>
+    </div>
+
+    <div class="build-image">
+        <img src="../Image/download.jfif" alt="Gaming PC">
+    </div>
+
+    <div class="specs">
+        <h3>Processor</h3>
+        <p id="processorName">None</p>
+        <h3>Graphics Card</h3>
+        <p id="gpuName">None Selected</p>
+        <h3>Motherboard</h3>
+        <p id="motherboardName">None Selected</p>
+        <h3>Memory</h3>
+        <p id="ramName">None Selected</p>
+        <h3>Storage</h3>
+        <p id="storageName">None Selected</p>
+        <h3>Power Supply</h3>
+        <p id="psuName">None Selected</p>
+        <h3>Cooling</h3>
+        <p id="coolingName">None Selected</p>
+    </div>
+</section>
+
+<section id="components" class="section-box components hidden">
+    <h2>Components</h2>
+
+    <div class="grid">
+
+        <a href="processor.html" class="comp-card">
+            <img src="../Image/cpuicon.png" alt="Processor">
+            <span>Processor</span>
+        </a>
+
+        <a href="GraphicsCard.html" class="comp-card">
+            <img src="../Image/GraphicsCardicon.jfif" alt="Graphics Card">
+            <span>Graphics Card</span>
+        </a>
+
+        <a href="Motherboard.html" class="comp-card">
+            <img src="../Image/Motherboard.png" alt="Motherboard">
+            <span>Motherboard</span>
+        </a>
+
+        <a href="Memory.html" class="comp-card">
+            <img src="../Image/RAMicon.png" alt="RAM">
+            <span>Memory (RAM)</span>
+        </a>
+
+        <a href="Storage.html" class="comp-card">
+            <img src="../Image/StorageIcon.png" alt="Storage">
+            <span>Storage</span>
+        </a>
+
+        <a href="PowerSupply.html" class="comp-card">
+            <img src="../Image/PowerSupplyIcon.png" alt="Power Supply">
+            <span>Power Supply</span>
+        </a>
+
+        <a href="CoolingSystem.html" class="comp-card">
+            <img src="../Image/CoolingIcon.png" alt="Cooling">
+            <span>System Cooling</span>
+        </a>
+
+        <a href="GamingPeripherals.html" class="comp-card">
+            <img src="../Image/PeripheralsIcon.png" alt="Peripherals">
+            <span>Gaming Peripherals</span>
+        </a>
+
+    </div>
+</section>
+
+<section class="section-box" style="display:flex;gap:12px;flex-wrap:wrap;">
+    <button class="compat-check-btn" onclick="showCompatibilityReport()" style="flex:1;min-width:250px;">
+        🤖 AI Compatibility Check
+    </button>
+    <button class="compat-check-btn" onclick="showBuildRecommender()" style="flex:1;min-width:250px;background:linear-gradient(135deg, #f59e0b, #ef4444);">
+        💡 AI Build Recommender
+    </button>
+</section>
+
+<section class="section-box help">
+    <h2>Need help?</h2>
+    <p>If you have questions, our support team is ready to help.</p>
+    <p>📞 +970-599-123456</p>
+    <p>📧 support@pcbuilder.com</p>
+</section>
+
+<footer class="footer">
+    <p>© 2026 PC Builder. All rights reserved.</p>
+</footer>
+
+<script src="../Js/utils.js"></script>
+<script src="../Js/compatibility.js"></script>
+<script src="../Js/ai-chat.js"></script>
+<script src="../Js/ai-recommend.js"></script>
+<script src="../Js/Build.js"></script>
+
+</body>
+</html>

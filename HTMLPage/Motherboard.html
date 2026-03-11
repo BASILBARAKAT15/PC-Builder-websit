@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motherboards</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <link rel="stylesheet" href="../CSSPage/Motherboard.css">
+    </head>
+<body>
+
+<header class="navbar"></header>
+<script>document.addEventListener('DOMContentLoaded', () => generateNavbar('build'));</script>
+
+<section class="motherboard-hero">
+    <h1> Top Motherboards</h1>
+    <p>Choose the perfect motherboard for your build</p>
+</section>
+
+<section class="section-box">
+    
+    <div class="filter-bar">
+        <input type="text" class="search-input" placeholder="🔍 Search products..." oninput="filterProducts(this.value)">
+        <select class="filter-select" onchange="sortProducts(this.value)">
+            <option value="">Sort by</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name: A-Z</option>
+        </select>
+    </div>
+
+    <div class="grid">
+
+        
+        <div class="mb-card" data-name="ASUS ROG Strix Z790-E" data-specs="{&quot;Brand&quot;: &quot;ASUS&quot;, &quot;Chipset&quot;: &quot;Intel Z790&quot;, &quot;Socket&quot;: &quot;LGA 1700&quot;, &quot;Form Factor&quot;: &quot;ATX&quot;, &quot;Memory Slots&quot;: &quot;4x DDR5&quot;, &quot;Max RAM&quot;: &quot;128GB&quot;, &quot;M.2 Slots&quot;: &quot;5&quot;, &quot;PCIe Slots&quot;: &quot;2x PCIe 5.0 x16&quot;, &quot;USB Ports&quot;: &quot;USB 3.2 Gen 2x2, Thunderbolt 4&quot;, &quot;WiFi&quot;: &quot;WiFi 6E&quot;, &quot;Bluetooth&quot;: &quot;5.3&quot;, &quot;Audio&quot;: &quot;SupremeFX ALC4082&quot;, &quot;LAN&quot;: &quot;2.5Gb Intel&quot;}" data-price="500" data-image="../Image/ASUS ROG Strix Z790-E.jfif">
+            <img src="../Image/ASUS ROG Strix Z790-E.jfif" alt="ASUS ROG Strix Z790-E">
+            <h3>ASUS ROG Strix Z790-E</h3>
+            <p>High-end gaming motherboard with DDR5 support</p>
+            <span class="price">$500</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="mb-card" data-name="MSI MPG B550 Gaming Edge" data-specs="{&quot;Brand&quot;: &quot;MSI&quot;, &quot;Chipset&quot;: &quot;B550&quot;, &quot;Socket&quot;: &quot;AM4&quot;, &quot;Form Factor&quot;: &quot;ATX&quot;, &quot;RAM Slots&quot;: &quot;4x DDR4&quot;, &quot;Max RAM&quot;: &quot;128GB&quot;, &quot;M.2 Slots&quot;: &quot;2&quot;, &quot;WiFi&quot;: &quot;WiFi 6&quot;, &quot;Bluetooth&quot;: &quot;5.0&quot;, &quot;Audio&quot;: &quot;ALC1200&quot;, &quot;LAN&quot;: &quot;2.5Gb&quot;}" data-price="220" data-image="../Image/MSI MPG B550 Gaming Edge.jfif">
+            <img src="../Image/MSI MPG B550 Gaming Edge.jfif" alt="MSI MPG B550 Gaming Edge">
+            <h3>MSI MPG B550 Gaming Edge</h3>
+            <p>Reliable mid-range AM4 motherboard</p>
+            <span class="price">$220</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="mb-card" data-name="Gigabyte Z690 AORUS Elite" data-specs="{&quot;Brand&quot;: &quot;Gigabyte&quot;, &quot;Chipset&quot;: &quot;Intel Z690&quot;, &quot;Socket&quot;: &quot;LGA 1700&quot;, &quot;Form Factor&quot;: &quot;ATX&quot;, &quot;Memory Slots&quot;: &quot;4x DDR5&quot;, &quot;Max RAM&quot;: &quot;128GB&quot;, &quot;M.2 Slots&quot;: &quot;4&quot;, &quot;PCIe Slots&quot;: &quot;1x PCIe 5.0 x16&quot;, &quot;USB Ports&quot;: &quot;USB 3.2 Gen 2x2&quot;, &quot;WiFi&quot;: &quot;No (LAN only)&quot;, &quot;Bluetooth&quot;: &quot;No&quot;, &quot;Audio&quot;: &quot;Realtek ALC1220-VB&quot;, &quot;LAN&quot;: &quot;2.5Gb Intel&quot;}" data-price="300" data-image="../Image/Gigabyte Z690 AORUS Elite.jfif">
+            <img src="../Image/Gigabyte Z690 AORUS Elite.jfif" alt="Gigabyte Z690 AORUS Elite">
+            <h3>Gigabyte Z690 AORUS Elite</h3>
+            <p>DDR5 support with PCIe 5.0 for future-proof builds</p>
+            <span class="price">$300</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="mb-card" data-name="ASRock B660 Steel Legend" data-specs="{&quot;Brand&quot;: &quot;ASRock&quot;, &quot;Chipset&quot;: &quot;B660&quot;, &quot;Socket&quot;: &quot;LGA 1700&quot;, &quot;Form Factor&quot;: &quot;ATX&quot;, &quot;RAM Slots&quot;: &quot;4x DDR4&quot;, &quot;Max RAM&quot;: &quot;128GB&quot;, &quot;M.2 Slots&quot;: &quot;3&quot;, &quot;WiFi&quot;: &quot;No&quot;, &quot;Bluetooth&quot;: &quot;No&quot;, &quot;Audio&quot;: &quot;ALC897&quot;, &quot;LAN&quot;: &quot;1Gb&quot;}" data-price="180" data-image="../Image/ASUS ROG Strix B550-F.jfif">
+            <img src="../Image/ASUS ROG Strix B550-F.jfif" alt="ASRock B660 Steel Legend">
+            <h3>ASRock B660 Steel Legend</h3>
+            <p>Durable board with solid performance for Intel 12th Gen</p>
+            <span class="price">$180</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="mb-card" data-name="EVGA Z590 FTW" data-specs="{&quot;Brand&quot;: &quot;EVGA&quot;, &quot;Chipset&quot;: &quot;Intel Z590&quot;, &quot;Socket&quot;: &quot;LGA 1200&quot;, &quot;Form Factor&quot;: &quot;ATX&quot;, &quot;Memory Slots&quot;: &quot;4x DDR4&quot;, &quot;Max RAM&quot;: &quot;128GB&quot;, &quot;M.2 Slots&quot;: &quot;3&quot;, &quot;PCIe Slots&quot;: &quot;2x PCIe 4.0 x16&quot;, &quot;USB Ports&quot;: &quot;USB 3.2 Gen 2x2&quot;, &quot;WiFi&quot;: &quot;WiFi 6&quot;, &quot;Bluetooth&quot;: &quot;5.0&quot;, &quot;Audio&quot;: &quot;Realtek ALC1220&quot;, &quot;LAN&quot;: &quot;2.5Gb Intel&quot;}" data-price="400" data-image="../Image/EVGA Z590 FTW.jfif">
+            <img src="../Image/EVGA Z590 FTW.jfif" alt="EVGA Z590 FTW">
+            <h3>EVGA Z590 FTW</h3>
+            <p>Premium motherboard with great overclocking potential</p>
+            <span class="price">$400</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="mb-card" data-name="ASUS TUF Gaming B550-Plus" data-specs="{&quot;Brand&quot;: &quot;ASUS&quot;, &quot;Chipset&quot;: &quot;B550&quot;, &quot;Socket&quot;: &quot;AM4&quot;, &quot;Form Factor&quot;: &quot;ATX&quot;, &quot;RAM Slots&quot;: &quot;4x DDR4&quot;, &quot;Max RAM&quot;: &quot;128GB&quot;, &quot;M.2 Slots&quot;: &quot;2&quot;, &quot;WiFi&quot;: &quot;No&quot;, &quot;Bluetooth&quot;: &quot;No&quot;, &quot;Audio&quot;: &quot;S1200A&quot;, &quot;LAN&quot;: &quot;2.5Gb&quot;}" data-price="160" data-image="../Image/ASUS TUF Gaming B550-Plus.jfif">
+            <img src="../Image/ASUS TUF Gaming B550-Plus.jfif" alt="ASUS TUF Gaming B550-Plus">
+            <h3>ASUS TUF Gaming B550-Plus</h3>
+            <p>Reliable and affordable motherboard for AM4 CPUs</p>
+            <span class="price">$160</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="mb-card" data-name="Gigabyte B660M DS3H" data-specs="{&quot;Brand&quot;: &quot;Gigabyte&quot;, &quot;Chipset&quot;: &quot;Intel B660&quot;, &quot;Socket&quot;: &quot;LGA 1700&quot;, &quot;Form Factor&quot;: &quot;Micro-ATX&quot;, &quot;Memory Slots&quot;: &quot;2x DDR4&quot;, &quot;Max RAM&quot;: &quot;64GB&quot;, &quot;M.2 Slots&quot;: &quot;2&quot;, &quot;PCIe Slots&quot;: &quot;1x PCIe 4.0 x16&quot;, &quot;USB Ports&quot;: &quot;USB 3.2 Gen 1&quot;, &quot;WiFi&quot;: &quot;No&quot;, &quot;Bluetooth&quot;: &quot;No&quot;, &quot;Audio&quot;: &quot;Realtek ALC897&quot;, &quot;LAN&quot;: &quot;1Gb Realtek&quot;}" data-price="140" data-image="../Image/ASUS ROG Strix B550-F.jfif">
+            <img src="../Image/ASUS ROG Strix B550-F.jfif" alt="Gigabyte B660M DS3H">
+            <h3>Gigabyte B660M DS3H</h3>
+            <p>Compact motherboard with solid features for Intel 12th Gen CPUs</p>
+            <span class="price">$140</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="mb-card" data-name="ASUS ROG Strix B550-F" data-specs="{&quot;Brand&quot;: &quot;ASUS&quot;, &quot;Chipset&quot;: &quot;B550&quot;, &quot;Socket&quot;: &quot;AM4&quot;, &quot;Form Factor&quot;: &quot;ATX&quot;, &quot;RAM Slots&quot;: &quot;4x DDR4&quot;, &quot;Max RAM&quot;: &quot;128GB&quot;, &quot;M.2 Slots&quot;: &quot;2&quot;, &quot;WiFi&quot;: &quot;WiFi 6&quot;, &quot;Bluetooth&quot;: &quot;5.1&quot;, &quot;Audio&quot;: &quot;S1220A&quot;, &quot;LAN&quot;: &quot;2.5Gb&quot;}" data-price="200" data-image="../Image/ASUS ROG Strix B550-F.jfif">
+            <img src="../Image/ASUS ROG Strix B550-F.jfif" alt="ASUS ROG Strix B550-F">
+            <h3>ASUS ROG Strix B550-F</h3>
+            <p>High-performance AM4 motherboard for gaming and streaming</p>
+            <span class="price">$200</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 PC Builder. All rights reserved.</p>
+</footer>
+
+<script src="../Js/utils.js"></script>
+<script src="../Js/ai-chat.js"></script>
+<script src="../Js/Motherboard.js"></script>
+
+</body>
+</html>

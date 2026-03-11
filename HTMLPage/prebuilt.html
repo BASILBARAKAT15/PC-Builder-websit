@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Built PCs</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <link rel="stylesheet" href="../CSSPage/prebuilt.css">
+</head>
+<body>
+
+<header class="navbar"></header>
+<script>document.addEventListener('DOMContentLoaded', () => generateNavbar('prebuilt'));</script>
+
+<section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="../Image/33093-395456662_small.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1>Build Your Dream Setup</h1>
+        <p>High-performance PCs and Gaming TVs ready for you!</p>
+    </div>
+</section>
+
+<section class="section-box">
+    <h1>Pre-Built PCs</h1>
+    <p>Choose from our ready-to-use high-performance PCs.</p>
+
+    
+    <div class="filter-bar">
+        <input type="text" class="search-input" placeholder="🔍 Search products..." oninput="filterProducts(this.value)">
+        <select class="filter-select" onchange="sortProducts(this.value)">
+            <option value="">Sort by</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name: A-Z</option>
+        </select>
+    </div>
+
+    <div class="grid">
+
+        
+        <div class="comp-card" data-name="Gaming Beast X1" data-price="2500">
+            <img src="../Image/prePC1.jfif">
+            <h3>Gaming Beast X1</h3>
+            <ul>
+                <li>Intel i9-14900K</li>
+                <li>NVIDIA RTX 4080</li>
+                <li>32GB DDR5 RAM</li>
+                <li>1TB NVMe SSD</li>
+            </ul>
+            <p class="price">$2500</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Budget Gamer V2" data-price="1200">
+            <img src="../Image/prePC2.jpg">
+            <h3>Budget Gamer V2</h3>
+            <ul>
+                <li>Intel i5-14600K</li>
+                <li>NVIDIA RTX 4060</li>
+                <li>16GB DDR5 RAM</li>
+                <li>512GB SSD</li>
+            </ul>
+            <p class="price">$1200</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Workstation Pro Z" data-price="3200">
+            <img src="../Image/prePC3.jfif">
+            <h3>Workstation Pro Z</h3>
+            <ul>
+                <li>Ryzen 9 7950X</li>
+                <li>NVIDIA RTX 4090</li>
+                <li>64GB DDR5 RAM</li>
+                <li>2TB NVMe SSD</li>
+            </ul>
+            <p class="price">$3200</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Stealth Gamer S4" data-price="2000">
+            <img src="../Image/pc5.jfif">
+            <h3>Stealth Gamer S4</h3>
+            <ul>
+                <li>Intel i7-14700K</li>
+                <li>NVIDIA RTX 4070 Ti</li>
+                <li>32GB DDR5 RAM</li>
+                <li>1TB NVMe SSD</li>
+            </ul>
+            <p class="price">$2000</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Mini Powerhouse M2" data-price="1400">
+            <img src="../Image/pc9.jfif">
+            <h3>Mini Powerhouse M2</h3>
+            <ul>
+                <li>AMD Ryzen 7 7800X</li>
+                <li>NVIDIA RTX 4060</li>
+                <li>16GB DDR5 RAM</li>
+                <li>512GB NVMe SSD</li>
+            </ul>
+            <p class="price">$1400</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Ultimate Creator C9" data-price="3500">
+            <img src="../Image/pc7.jfif">
+            <h3>Ultimate Creator C9</h3>
+            <ul>
+                <li>Intel i9-14900K</li>
+                <li>NVIDIA RTX 4090</li>
+                <li>64GB DDR5 RAM</li>
+                <li>2TB NVMe SSD</li>
+            </ul>
+            <p class="price">$3500</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Phantom Gamer P7" data-price="2200">
+            <img src="../Image/pc8.jfif">
+            <h3>Phantom Gamer P7</h3>
+            <ul>
+                <li>Intel i7-14700KF</li>
+                <li>NVIDIA RTX 4080</li>
+                <li>32GB DDR5 RAM</li>
+                <li>1TB NVMe SSD</li>
+            </ul>
+            <p class="price">$2200</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Creator Xtreme C8" data-price="3700">
+            <img src="../Image/pc6.jfif">
+            <h3>Creator Xtreme C8</h3>
+            <ul>
+                <li>Intel i9-14900K</li>
+                <li>NVIDIA RTX 4090</li>
+                <li>128GB DDR5 RAM</li>
+                <li>4TB NVMe SSD</li>
+            </ul>
+            <p class="price">$3700</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="section-box">
+    <h1>Gaming TVs</h1>
+    <p>Smooth visuals and stunning colors for console and PC gaming.</p>
+
+    <div class="grid">
+
+        
+        <div class="comp-card" data-name="LG OLED C3 55”" data-price="1600">
+            <img src="../Image/LG OLED C3 55.jfif">
+            <h3>LG OLED C3 55”</h3>
+            <ul>
+                <li>4K OLED Display</li>
+                <li>120Hz Refresh Rate</li>
+                <li>HDMI 2.1 Support</li>
+                <li>1ms Response Time</li>
+            </ul>
+            <p class="price">$1600</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Samsung Neo QLED QN90C" data-price="1800">
+            <img src="../Image/Samsung Neo QLED QN90C.jfif">
+            <h3>Samsung Neo QLED QN90C</h3>
+            <ul>
+                <li>4K Mini-LED</li>
+                <li>144Hz Gaming Mode</li>
+                <li>Ultra Low Input Lag</li>
+                <li>HDR</li>
+            </ul>
+            <p class="price">$1800</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Sony Bravia XR A80L" data-price="1700">
+            <img src="../Image/Sony Bravia XR A80L.jfif">
+            <h3>Sony Bravia XR A80L</h3>
+            <ul>
+                <li>4K OLED Panel</li>
+                <li>120Hz Refresh Rate</li>
+                <li>Perfect for PS5</li>
+                <li>Dolby Vision</li>
+            </ul>
+            <p class="price">$1700</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Panasonic JZ2000 65”" data-price="1900">
+            <img src="../Image/Panasonic JZ2000 65.jfif">
+            <h3>Panasonic JZ2000 65”</h3>
+            <ul>
+                <li>4K OLED Display</li>
+                <li>120Hz Refresh Rate</li>
+                <li>HDMI 2.1</li>
+                <li>Dolby Vision & Atmos</li>
+            </ul>
+            <p class="price">$1900</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="TCL 6-Series 55”" data-price="900">
+            <img src="../Image/TCL 6-Series 55.jfif">
+            <h3>TCL 6-Series 55”</h3>
+            <ul>
+                <li>4K QLED Display</li>
+                <li>120Hz Refresh Rate</li>
+                <li>Low Input Lag</li>
+                <li>HDR10+</li>
+            </ul>
+            <p class="price">$900</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Hisense U8H 65”" data-price="1100">
+            <img src="../Image/Hisense U8H 65.jfif">
+            <h3>Hisense U8H 65”</h3>
+            <ul>
+                <li>4K ULED Display</li>
+                <li>144Hz Gaming Mode</li>
+                <li>Dolby Vision HDR</li>
+                <li>Low Input Lag</li>
+            </ul>
+            <p class="price">$1100</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="LG OLED G2 65”" data-price="2100">
+            <img src="../Image/LG OLED G2 65.jfif">
+            <h3>LG OLED G2 65”</h3>
+            <ul>
+                <li>4K OLED Display</li>
+                <li>120Hz Refresh Rate</li>
+                <li>HDMI 2.1</li>
+                <li>Dolby Vision & Atmos</li>
+            </ul>
+            <p class="price">$2100</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Samsung QN95C 65”" data-price="2000">
+            <img src="../Image/Samsung QN95C 65.jfif">
+            <h3>Samsung QN95C 65”</h3>
+            <ul>
+                <li>4K Neo QLED Display</li>
+                <li>144Hz Refresh Rate</li>
+                <li>Ultra Low Input Lag</li>
+                <li>HDR10+</li>
+            </ul>
+            <p class="price">$2000</p>
+            <button class="select-btn">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 PC Builder. All rights reserved.</p>
+</footer>
+
+<script src="../Js/utils.js"></script>
+<script src="../Js/ai-chat.js"></script>
+<script src="../Js/prebuilt.js"></script>
+
+</body>
+</html>

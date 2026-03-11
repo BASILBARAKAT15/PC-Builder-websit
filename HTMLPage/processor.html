@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Processor</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <link rel="stylesheet" href="../CSSPage/processor.css">
+</head>
+<body>
+
+<header class="navbar"></header>
+<script>document.addEventListener('DOMContentLoaded', () => generateNavbar('build'));</script>
+
+<section class="section-box">
+    <h1>Select Your Processor</h1>
+
+    
+    <div class="filter-bar">
+        <input type="text" class="search-input" placeholder="🔍 Search products..." oninput="filterProducts(this.value)">
+        <select class="filter-select" onchange="sortProducts(this.value)">
+            <option value="">Sort by</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name: A-Z</option>
+        </select>
+    </div>
+
+    <div class="grid">
+
+        
+        <div class="comp-card" data-name="AMD Ryzen 5 7600X" data-image="../Image/AMD Ryzen 5 7600X.jfif" data-specs="{&quot;Brand&quot;: &quot;AMD&quot;, &quot;Generation&quot;: &quot;Zen 4&quot;, &quot;Cores&quot;: &quot;6&quot;, &quot;Threads&quot;: &quot;12&quot;, &quot;Base Clock&quot;: &quot;4.7 GHz&quot;, &quot;Boost Clock&quot;: &quot;5.3 GHz&quot;, &quot;Cache&quot;: &quot;38MB (L2+L3)&quot;, &quot;TDP&quot;: &quot;105W&quot;, &quot;Socket&quot;: &quot;AM5&quot;, &quot;PCIe&quot;: &quot;5.0&quot;, &quot;Integrated GPU&quot;: &quot;Radeon (RDNA 2)&quot;, &quot;Memory Support&quot;: &quot;DDR5-5200&quot;, &quot;Lithography&quot;: &quot;5nm&quot;}" data-price="249">
+            <img src="../Image/AMD Ryzen 5 7600X.jfif" alt="Ryzen 5 7600X">
+            <h3>AMD Ryzen 5 7600X</h3>
+            <ul>
+                <li>6 Cores / 12 Threads</li>
+                <li>Boost Clock: 5.3 GHz</li>
+                <li>Great for Gaming</li>
+            </ul>
+            <p class="price">$249</p>
+            <button class="select-btn">Select</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="AMD Ryzen 9 7950X" data-image="../Image/AMD Ryzen 9 7950X.jfif" data-specs="{&quot;Brand&quot;: &quot;AMD&quot;, &quot;Generation&quot;: &quot;Zen 4&quot;, &quot;Cores&quot;: &quot;16&quot;, &quot;Threads&quot;: &quot;32&quot;, &quot;Base Clock&quot;: &quot;4.5 GHz&quot;, &quot;Boost Clock&quot;: &quot;5.7 GHz&quot;, &quot;Cache&quot;: &quot;80MB&quot;, &quot;TDP&quot;: &quot;170W&quot;, &quot;Socket&quot;: &quot;AM5&quot;, &quot;PCIe&quot;: &quot;5.0&quot;, &quot;Memory&quot;: &quot;DDR5-5200&quot;, &quot;Lithography&quot;: &quot;5nm&quot;}" data-price="699">
+            <img src="../Image/AMD Ryzen 9 7950X.jfif" alt="Ryzen 9 7950X">
+            <h3>AMD Ryzen 9 7950X</h3>
+            <ul>
+                <li>16 Cores / 32 Threads</li>
+                <li>Boost Clock: 5.7 GHz</li>
+                <li>Extreme Performance</li>
+            </ul>
+            <p class="price">$699</p>
+            <button class="select-btn">Select</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Intel i7-14700K" data-image="../Image/Intel i7-14700K.jfif" data-specs="{&quot;Brand&quot;: &quot;Intel&quot;, &quot;Generation&quot;: &quot;14th Gen Raptor Lake&quot;, &quot;Cores&quot;: &quot;20 (8P + 12E)&quot;, &quot;Threads&quot;: &quot;28&quot;, &quot;Base Clock&quot;: &quot;3.4 GHz&quot;, &quot;Boost Clock&quot;: &quot;5.6 GHz&quot;, &quot;Cache&quot;: &quot;33MB Smart Cache&quot;, &quot;TDP&quot;: &quot;125W&quot;, &quot;Socket&quot;: &quot;LGA 1700&quot;, &quot;PCIe&quot;: &quot;5.0 & 4.0&quot;, &quot;Integrated GPU&quot;: &quot;Intel UHD 770&quot;, &quot;Memory Support&quot;: &quot;DDR5-5600 / DDR4-3200&quot;, &quot;Lithography&quot;: &quot;Intel 7&quot;}" data-price="419">
+            <img src="../Image/Intel i7-14700K.jfif" alt="Intel i7-14700K">
+            <h3>Intel i7-14700K</h3>
+            <ul>
+                <li>20 Cores (8P + 12E)</li>
+                <li>Boost Clock: 5.6 GHz</li>
+                <li>High-End Gaming</li>
+            </ul>
+            <p class="price">$419</p>
+            <button class="select-btn">Select</button>
+        </div>
+
+        
+        <div class="comp-card" data-name="Intel i9-14900K" data-image="../Image/Intel i9-14900K.jfif" data-specs="{&quot;Brand&quot;: &quot;Intel&quot;, &quot;Generation&quot;: &quot;14th Gen&quot;, &quot;Cores&quot;: &quot;24 (8P+16E)&quot;, &quot;Threads&quot;: &quot;32&quot;, &quot;Base Clock&quot;: &quot;3.2 GHz&quot;, &quot;Boost Clock&quot;: &quot;6.0 GHz&quot;, &quot;Cache&quot;: &quot;36MB&quot;, &quot;TDP&quot;: &quot;125W&quot;, &quot;Socket&quot;: &quot;LGA 1700&quot;, &quot;PCIe&quot;: &quot;5.0/4.0&quot;, &quot;Memory&quot;: &quot;DDR5-5600/DDR4-3200&quot;, &quot;Lithography&quot;: &quot;Intel 7&quot;}" data-price="589">
+            <img src="../Image/Intel i9-14900K.jfif" alt="Intel i9-14900K">
+            <h3>Intel i9-14900K</h3>
+            <ul>
+                <li>24 Cores (8P + 16E)</li>
+                <li>Boost Clock: 6.0 GHz</li>
+                <li>Ultimate Power</li>
+            </ul>
+            <p class="price">$589</p>
+            <button class="select-btn">Select</button>
+        </div>
+
+    </div>
+</section>
+
+<script src="../Js/utils.js"></script>
+<script src="../Js/ai-chat.js"></script>
+<script src="../Js/processor.js"></script>
+
+</body>
+</html>
