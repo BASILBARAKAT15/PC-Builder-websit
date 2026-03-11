@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - PC Builder</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSSPage/global.css">
-    <link rel="stylesheet" href="../CSSPage/contact.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - PC Builder</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../CSSPage/global.css">
+<link rel="stylesheet" href="../CSSPage/contact.css">
+
+<!-- EmailJS SDK (v4) -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- Theme Script (optional) -->
+<script>
+    if(localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
 </head>
 <body>
 
@@ -22,17 +28,18 @@
     <p>We're here to help!</p>
 
     <div class="contact-info-box">
-        <p>📧 <strong>Email:</strong> support@pcbuilder.com</p>
-        <p>📱 <strong>Phone:</strong> +970 59 000 0000</p>
-        <p>📍 <strong>Location:</strong> Nablus, Palestine</p>
+        <div class="contact-info-item"><span>📧</span> support@pcbuilder.com</div>
+        <div class="contact-info-item"><span>📱</span> +970 59 000 0000</div>
+        <div class="contact-info-item"><span>📍</span> Nablus, Palestine</div>
     </div>
 
     <h2>Send us a message</h2>
 
-    <form class="contact-form" id="contactForm">
-        <input type="text" placeholder="Your Name *" required>
-        <input type="email" placeholder="Your Email *" required>
-        <textarea placeholder="Your Message *" rows="5" required></textarea>
+    <form class="contact-form" id="contact-form">
+        <input type="text" name="name" placeholder="Your Name *" required>
+        <input type="email" name="email" placeholder="Your Email *" required>
+        <textarea name="message" placeholder="Your Message *" rows="5" required></textarea>
+        <input type="hidden" name="time" id="time">
         <button type="submit">Send Message</button>
     </form>
 </section>
@@ -59,7 +66,7 @@
         <div class="footer-section">
             <h3>Team</h3>
             <p>Akram Musallam</p>
-            <p>Basel Barakat</p>
+            <p>Basil Barakat</p>
             <p>An-Najah National University</p>
         </div>
     </div>
@@ -68,8 +75,10 @@
     </div>
 </footer>
 
+<!-- Utils script -->
 <script src="../Js/utils.js"></script>
-<script src="../Js/ai-chat.js"></script>
+
+<!-- Contact JS -->
 <script src="../Js/contact.js"></script>
 </body>
 </html>

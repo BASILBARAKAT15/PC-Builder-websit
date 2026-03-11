@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🖥️ PC Builder — Setup Guide
 
 ## الخطوات لتشغيل المشروع
@@ -72,3 +73,7 @@ webProject/
 ```
 
 المفتاح محفوظ بالسيرفر فقط — ما حد بقدر يشوفه من المتصفح.
+=======
+"# BASILBARAKAT15-Chatting-Between-Peers" 
+"# BASILBARAKAT15-Chatting-Between-Peers" 
+>>>>>>> 99f77d612da4f2605b19b938d059c1f79c49f8a3
