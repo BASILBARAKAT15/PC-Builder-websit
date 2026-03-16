@@ -1,17 +1,26 @@
 {
   "name": "pcbuilder-server",
   "version": "1.0.0",
-  "description": "PC Builder backend - AI compatibility via Google Gemini (free)",
+  "description": "PC Builder backend - AI compatibility via Google Gemini",
   "main": "server.js",
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "nodemon server.js"
   },
   "dependencies": {
-    "express": "^4.21.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.0",
     "helmet": "^7.1.0",
-    "express-rate-limit": "^7.4.0"
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
   }
 }
