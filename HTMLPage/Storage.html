@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Devices</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <link rel="stylesheet" href="../CSSPage/Storage.css">
+</head>
+<body>
+
+<header class="navbar"></header>
+<script>document.addEventListener('DOMContentLoaded', () => generateNavbar('build'));</script>
+
+<section class="storage-hero">
+    <h1>💾 Top Storage Devices</h1>
+    <p>Fast and reliable SSDs and HDDs for gaming and professional use</p>
+</section>
+
+<section class="section-box">
+    
+    <div class="filter-bar">
+        <input type="text" class="search-input" placeholder="🔍 Search products..." oninput="filterProducts(this.value)">
+        <select class="filter-select" onchange="sortProducts(this.value)">
+            <option value="">Sort by</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name: A-Z</option>
+        </select>
+    </div>
+
+    <div class="grid">
+
+        
+        <div class="storage-card" data-name="Samsung 980 Pro 1TB NVMe SSD" data-specs="{&quot;Brand&quot;: &quot;Samsung&quot;, &quot;Capacity&quot;: &quot;1TB&quot;, &quot;Type&quot;: &quot;NVMe SSD&quot;, &quot;Interface&quot;: &quot;PCIe 4.0 x4&quot;, &quot;Form Factor&quot;: &quot;M.2 2280&quot;, &quot;Read Speed&quot;: &quot;7,000 MB/s&quot;, &quot;Write Speed&quot;: &quot;5,000 MB/s&quot;, &quot;Endurance&quot;: &quot;600 TBW&quot;, &quot;DRAM Cache&quot;: &quot;Yes&quot;, &quot;Encryption&quot;: &quot;AES 256-bit&quot;}" data-price="150">
+            <img src="../Image/Samsung 980 Pro 1TB NVMe SSD.jfif" alt="Samsung 980 Pro 1TB">
+            <h3>Samsung 980 Pro 1TB NVMe SSD</h3>
+            <p>Ultra-fast PCIe 4.0 NVMe SSD for high-speed performance</p>
+            <span class="price">$150</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="storage-card" data-name="WD Black SN850 1TB" data-image="../Image/WD Black SN850 1TB.jfif" data-specs="{&quot;Brand&quot;: &quot;WD&quot;, &quot;Capacity&quot;: &quot;1TB&quot;, &quot;Type&quot;: &quot;NVMe SSD&quot;, &quot;Interface&quot;: &quot;PCIe 4.0 x4&quot;, &quot;Read&quot;: &quot;7000 MB/s&quot;, &quot;Write&quot;: &quot;5300 MB/s&quot;, &quot;Endurance&quot;: &quot;600 TBW&quot;, &quot;DRAM Cache&quot;: &quot;Yes&quot;, &quot;Form Factor&quot;: &quot;M.2 2280&quot;}" data-price="140">
+            <img src="../Image/WD Black SN850 1TB.jfif" alt="WD Black SN850 1TB">
+            <h3>WD Black SN850 1TB</h3>
+            <p>High-performance NVMe SSD for gamers and creators</p>
+            <span class="price">$140</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="storage-card" data-name="Crucial MX500 1TB SATA SSD" data-specs="{&quot;Brand&quot;: &quot;Crucial&quot;, &quot;Capacity&quot;: &quot;1TB&quot;, &quot;Type&quot;: &quot;SATA SSD&quot;, &quot;Interface&quot;: &quot;SATA III 6Gb/s&quot;, &quot;Form Factor&quot;: &quot;2.5 inch&quot;, &quot;Read Speed&quot;: &quot;560 MB/s&quot;, &quot;Write Speed&quot;: &quot;510 MB/s&quot;, &quot;Endurance&quot;: &quot;360 TBW&quot;, &quot;DRAM Cache&quot;: &quot;Yes&quot;, &quot;Encryption&quot;: &quot;AES 256-bit&quot;}" data-price="95">
+            <img src="../Image/Crucial MX500 1TB SATA SSD.jfif" alt="Crucial MX500 1TB">
+            <h3>Crucial MX500 1TB SATA SSD</h3>
+            <p>Reliable SATA SSD for everyday use and gaming</p>
+            <span class="price">$95</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="storage-card" data-name="Seagate Barracuda 2TB HDD" data-image="../Image/Seagate Barracuda 2TB HDD.jfif" data-specs="{&quot;Brand&quot;: &quot;Seagate&quot;, &quot;Capacity&quot;: &quot;2TB&quot;, &quot;Type&quot;: &quot;HDD&quot;, &quot;Interface&quot;: &quot;SATA III&quot;, &quot;RPM&quot;: &quot;7200&quot;, &quot;Cache&quot;: &quot;256MB&quot;, &quot;Read&quot;: &quot;~220 MB/s&quot;, &quot;Form Factor&quot;: &quot;3.5 inch&quot;}" data-price="70">
+            <img src="../Image/Seagate Barracuda 2TB HDD.jfif" alt="Seagate Barracuda 2TB">
+            <h3>Seagate Barracuda 2TB HDD</h3>
+            <p>High-capacity mechanical drive for storage and backups</p>
+            <span class="price">$70</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="storage-card" data-name="Samsung 870 EVO 1TB SATA SSD" data-specs="{&quot;Brand&quot;: &quot;Samsung&quot;, &quot;Capacity&quot;: &quot;1TB&quot;, &quot;Type&quot;: &quot;SATA SSD&quot;, &quot;Interface&quot;: &quot;SATA III 6Gb/s&quot;, &quot;Form Factor&quot;: &quot;2.5 inch&quot;, &quot;Read Speed&quot;: &quot;560 MB/s&quot;, &quot;Write Speed&quot;: &quot;530 MB/s&quot;, &quot;Endurance&quot;: &quot;600 TBW&quot;, &quot;DRAM Cache&quot;: &quot;Yes&quot;, &quot;Encryption&quot;: &quot;AES 256-bit&quot;}" data-price="110">
+            <img src="../Image/Samsung 870 EVO 1TB SATA SSD.jfif" alt="Samsung 870 EVO 1TB">
+            <h3>Samsung 870 EVO 1TB SATA SSD</h3>
+            <p>Fast and reliable SATA SSD for gaming and productivity</p>
+            <span class="price">$110</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="storage-card" data-name="WD Blue 4TB HDD" data-image="../Image/WD Blue 4TB HDD.jfif" data-specs="{&quot;Brand&quot;: &quot;WD&quot;, &quot;Capacity&quot;: &quot;4TB&quot;, &quot;Type&quot;: &quot;HDD&quot;, &quot;Interface&quot;: &quot;SATA III&quot;, &quot;RPM&quot;: &quot;5400&quot;, &quot;Cache&quot;: &quot;256MB&quot;, &quot;Read&quot;: &quot;~175 MB/s&quot;, &quot;Form Factor&quot;: &quot;3.5 inch&quot;}" data-price="90">
+            <img src="../Image/WD Blue 4TB HDD.jfif" alt="WD Blue 4TB">
+            <h3>WD Blue 4TB HDD</h3>
+            <p>Large capacity HDD for mass storage and backups</p>
+            <span class="price">$90</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="storage-card" data-name="Kingston KC3000 1TB NVMe SSD" data-specs="{&quot;Brand&quot;: &quot;Kingston&quot;, &quot;Capacity&quot;: &quot;1TB&quot;, &quot;Type&quot;: &quot;NVMe SSD&quot;, &quot;Interface&quot;: &quot;PCIe 4.0 x4&quot;, &quot;Form Factor&quot;: &quot;M.2 2280&quot;, &quot;Read Speed&quot;: &quot;7,000 MB/s&quot;, &quot;Write Speed&quot;: &quot;6,000 MB/s&quot;, &quot;Endurance&quot;: &quot;800 TBW&quot;, &quot;DRAM Cache&quot;: &quot;No (HMB)&quot;, &quot;Encryption&quot;: &quot;No&quot;}" data-price="160">
+            <img src="../Image/Kingston KC3000 1TB NVMe SSD.jfif" alt="Kingston KC3000 1TB">
+            <h3>Kingston KC3000 1TB NVMe SSD</h3>
+            <p>High-speed NVMe SSD for extreme gaming performance</p>
+            <span class="price">$160</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="storage-card" data-name="Crucial P5 Plus 2TB NVMe SSD" data-image="../Image/Crucial P5 Plus 2TB NVMe SSD.jfif" data-specs="{&quot;Brand&quot;: &quot;Crucial&quot;, &quot;Capacity&quot;: &quot;2TB&quot;, &quot;Type&quot;: &quot;NVMe SSD&quot;, &quot;Interface&quot;: &quot;PCIe 4.0 x4&quot;, &quot;Read&quot;: &quot;6600 MB/s&quot;, &quot;Write&quot;: &quot;5000 MB/s&quot;, &quot;Endurance&quot;: &quot;1200 TBW&quot;, &quot;DRAM Cache&quot;: &quot;Yes&quot;, &quot;Form Factor&quot;: &quot;M.2 2280&quot;}" data-price="280">
+            <img src="../Image/Crucial P5 Plus 2TB NVMe SSD.jfif" alt="Crucial P5 Plus 2TB">
+            <h3>Crucial P5 Plus 2TB NVMe SSD</h3>
+            <p>Ultra-fast PCIe 4.0 NVMe SSD for large files and gaming</p>
+            <span class="price">$280</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 PC Builder. All rights reserved.</p>
+</footer>
+
+<script src="../Js/api.js"></script>
+<script src="../Js/utils.js"></script>
+<script src="../Js/ai-chat.js"></script>
+<script src="../Js/Storage.js"></script>
+
+<script src="../Js/products-sync.js"></script>
+</body>
+</html>

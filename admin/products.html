@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+<div class="admin-layout">
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-header"><h2>🖥️ PC Builder</h2><p>Admin Panel</p></div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+            <a href="orders.html"><span class="nav-icon">📦</span> Orders</a>
+            <a href="users.html"><span class="nav-icon">👥</span> Users</a>
+            <a href="products.html" class="active"><span class="nav-icon">🛍️</span> Products</a>
+            <a href="coupons.html"><span class="nav-icon">🎟️</span> Coupons</a>
+            <a href="../HTMLPage/index.html"><span class="nav-icon">🌐</span> View Store</a>
+        </nav>
+        <div class="sidebar-logout"><button onclick="adminLogout()">🚪 Logout</button></div>
+    </aside>
+
+    <main class="admin-main">
+        <div class="admin-header">
+            <h1>🛍️ Products Management</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+
+        
+        <div class="admin-form">
+            <h3>Add New Product</h3>
+            <div class="form-row">
+                <input type="text" id="prodName" placeholder="Product name">
+                <input type="number" id="prodPrice" placeholder="Price ($)" min="1" step="0.01">
+                <select id="prodCategory" onchange="onCategoryChange()">
+                    <option value="">Select Category</option>
+                    <option value="CPU">Processor (CPU)</option>
+                    <option value="GPU">Graphics Card (GPU)</option>
+                    <option value="Motherboard">Motherboard</option>
+                    <option value="RAM">Memory (RAM)</option>
+                    <option value="Storage">Storage</option>
+                    <option value="Power Supply">Power Supply</option>
+                    <option value="Cooling">Cooling</option>
+                    <option value="Peripherals">Peripherals</option>
+                    <option value="Pre-Built">Pre-Built PC</option>
+                    <option value="Trending">Trending</option>
+                </select>
+            </div>
+            <div class="form-row" style="margin-top:10px;">
+                <input type="number" id="prodStock" placeholder="Stock (e.g. 50)" min="0" value="50">
+                <input type="text" id="prodImage" placeholder="Image path (e.g. ../Image/MyCPU.jfif)" style="flex:2;">
+            </div>
+
+            <!-- Dynamic specs section — renders inputs based on selected category -->
+            <div id="specsSection" style="margin-top:16px;display:none;">
+                <h4 style="margin:8px 0;color:var(--text-secondary);font-size:14px;">
+                    📋 Product Specifications
+                    <span style="font-weight:400;font-size:12px;">(fill what applies — empty fields are ignored)</span>
+                </h4>
+                <div id="specsFields" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;"></div>
+            </div>
+
+            <div style="margin-top:16px;text-align:right;">
+                <button class="btn btn-primary" onclick="addProduct()">Add Product</button>
+            </div>
+        </div>
+
+        <div class="admin-table-container">
+            <div class="admin-table-header">
+                <h2>All Products</h2>
+                <span id="productCount"></span>
+            </div>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Specs</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="productsTableBody"></tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+<script src="../Js/api.js"></script>
+<script src="../Js/utils.js"></script>
+<script src="admin.js"></script>
+<script>
+    checkAdminAccess();
+    loadProducts();
+</script>
+</body>
+</html>

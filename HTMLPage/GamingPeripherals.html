@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script>
+(function(){
+var t=localStorage.getItem('theme');
+if(t==='dark')document.documentElement.setAttribute('data-theme','dark');
+})();
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gaming Peripherals - PC Builder</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../CSSPage/global.css">
+<link rel="stylesheet" href="../CSSPage/GamingPeripherals.css">
+
+</head>
+
+<body>
+
+<header class="navbar"></header>
+<script>
+document.addEventListener('DOMContentLoaded', () => generateNavbar('build'));
+</script>
+
+<section class="peripherals-hero">
+<h1>🎮 Top Gaming Peripherals</h1>
+<p>Enhance your gaming setup with high-performance peripherals</p>
+</section>
+
+<section class="section-box">
+
+<div class="filter-bar">
+
+<input type="text"
+class="search-input"
+placeholder="🔍 Search products..."
+oninput="filterProducts(this.value)">
+
+<select class="filter-select" onchange="sortProducts(this.value)">
+<option value="">Sort by</option>
+<option value="price-low">Price: Low to High</option>
+<option value="price-high">Price: High to Low</option>
+<option value="name">Name: A-Z</option>
+</select>
+
+</div>
+
+<div class="grid">
+
+<!-- 1 -->
+<div class="peripheral-card" data-name="Razer Huntsman Elite Keyboard" data-price="200">
+<img src="../Image/Razer Huntsman Elite Keyboard.jfif">
+<h3>Razer Huntsman Elite Keyboard</h3>
+<p>Mechanical keyboard with fast optical switches and RGB lighting</p>
+<span class="price">$200</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 2 -->
+<div class="peripheral-card" data-name="Logitech G502 Hero Mouse" data-price="80">
+<img src="../Image/Logitech G502 Hero Mouse.jfif">
+<h3>Logitech G502 Hero Mouse</h3>
+<p>High-precision gaming mouse with customizable DPI</p>
+<span class="price">$80</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 3 -->
+<div class="peripheral-card" data-name="HyperX Cloud II Headset" data-price="100">
+<img src="../Image/HyperX Cloud II Headset.jfif">
+<h3>HyperX Cloud II Headset</h3>
+<p>Comfortable headset with 7.1 surround sound</p>
+<span class="price">$100</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 4 -->
+<div class="peripheral-card" data-name="SteelSeries QcK Gaming Mousepad" data-price="25">
+<img src="../Image/SteelSeries QcK Gaming Mousepad.jfif">
+<h3>SteelSeries QcK Mousepad</h3>
+<p>High-quality surface for precise mouse movements</p>
+<span class="price">$25</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 5 -->
+<div class="peripheral-card" data-name="Xbox Elite Series 2 Controller" data-price="180">
+<img src="../Image/Xbox Elite Series 2 Controller.jfif">
+<h3>Xbox Elite Series 2 Controller</h3>
+<p>Premium controller with customizable buttons</p>
+<span class="price">$180</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 6 -->
+<div class="peripheral-card" data-name="Secretlab Titan Gaming Chair" data-price="450">
+<img src="../Image/Secretlab Titan Gaming Chair.jfif">
+<h3>Secretlab Titan Gaming Chair</h3>
+<p>Ergonomic chair designed for long gaming sessions</p>
+<span class="price">$450</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 7 -->
+<div class="peripheral-card" data-name="ASUS ROG Swift 27 144Hz" data-price="350">
+<img src="../Image/ASUS ROG Swift 27 144Hz.jfif">
+<h3>ASUS ROG Swift 27 144Hz</h3>
+<p>High refresh rate monitor with G-Sync support</p>
+<span class="price">$350</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 8 -->
+<div class="peripheral-card" data-name="Corsair iCUE Lighting Node PRO" data-price="80">
+<img src="../Image/Corsair iCUE Lighting Node PRO.jfif">
+<h3>Corsair iCUE Lighting Node PRO</h3>
+<p>RGB lighting system for full PC customization</p>
+<span class="price">$80</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 9 -->
+<div class="peripheral-card" data-name="Logitech G923 Racing Wheel" data-price="400">
+<img src="../Image/Logitech G923 Racing Wheel.jfif">
+<h3>Logitech G923 Racing Wheel</h3>
+<p>Immersive racing wheel with force feedback</p>
+<span class="price">$400</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 10 -->
+<div class="peripheral-card" data-name="Oculus Quest 2 VR Headset" data-price="350">
+<img src="../Image/Oculus Quest 2 VR Headset.jfif">
+<h3>Oculus Quest 2 VR Headset</h3>
+<p>Wireless VR headset for immersive gaming</p>
+<span class="price">$350</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 11 -->
+<div class="peripheral-card" data-name="Blue Yeti USB Microphone" data-price="120">
+<img src="../Image/Blue Yeti USB Microphone.jfif">
+<h3>Blue Yeti USB Microphone</h3>
+<p>High-quality microphone for streaming</p>
+<span class="price">$120</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 12 -->
+<div class="peripheral-card" data-name="Hori Flex Controller Stand" data-price="60">
+<img src="../Image/Hori Flex Controller Stand.jfif">
+<h3>Hori Flex Controller Stand</h3>
+<p>Organize your controllers easily</p>
+<span class="price">$60</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- NEW ITEMS -->
+
+<!-- 13 -->
+<div class="peripheral-card" data-name="Razer Basilisk V3 Mouse" data-price="90">
+<img src="../Image/Razer Basilisk V3 Mouse.jfif">
+<h3>Razer Basilisk V3 Mouse</h3>
+<p>High precision gaming mouse with RGB</p>
+<span class="price">$90</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 14 -->
+<div class="peripheral-card" data-name="Corsair K95 RGB Platinum" data-price="210">
+<img src="../Image/Corsair K95 RGB Platinum.jfif">
+<h3>Corsair K95 RGB Platinum</h3>
+<p>Premium mechanical keyboard with macro keys</p>
+<span class="price">$210</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 15 -->
+<div class="peripheral-card" data-name="SteelSeries Arctis 7 Headset" data-price="150">
+<img src="../Image/SteelSeries Arctis 7.jfif">
+<h3>SteelSeries Arctis 7</h3>
+<p>Wireless headset with immersive sound</p>
+<span class="price">$150</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 16 -->
+<div class="peripheral-card" data-name="Elgato Stream Deck MK2" data-price="160">
+<img src="../Image/Elgato Stream Deck MK2.jfif">
+<h3>Elgato Stream Deck MK2</h3>
+<p>Control streaming apps with one touch</p>
+<span class="price">$160</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 17 -->
+<div class="peripheral-card" data-name="Logitech G Pro X Superlight" data-price="150">
+<img src="../Image/Logitech G Pro X Superlight.jfif">
+<h3>Logitech G Pro X Superlight</h3>
+<p>Ultra-light esports gaming mouse</p>
+<span class="price">$150</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 18 -->
+<div class="peripheral-card" data-name="Razer Seiren X Microphone" data-price="110">
+<img src="../Image/Razer Seiren X Microphone.jfif">
+<h3>Razer Seiren X Microphone</h3>
+<p>Compact microphone for streamers</p>
+<span class="price">$110</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 19 -->
+<div class="peripheral-card" data-name="Glorious Model O Mouse" data-price="70">
+<img src="../Image/Glorious Model O.jfif">
+<h3>Glorious Model O</h3>
+<p>Ultra lightweight honeycomb gaming mouse</p>
+<span class="price">$70</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+<!-- 20 -->
+<div class="peripheral-card" data-name="BenQ Zowie XL2411K Monitor" data-price="300">
+<img src="../Image/BenQ Zowie XL2411K.jfif">
+<h3>BenQ Zowie XL2411K</h3>
+<p>Professional esports 144Hz gaming monitor</p>
+<span class="price">$300</span>
+<button class="buy-btn">Buy</button>
+</div>
+
+</div>
+</section>
+
+<footer class="footer">
+<p>© 2026 PC Builder. All rights reserved.</p>
+</footer>
+
+<script src="../Js/api.js"></script>
+<script src="../Js/utils.js"></script>
+<script src="../Js/ai-chat.js"></script>
+<script src="../Js/GamingPeripherals.js"></script>
+
+<script src="../Js/products-sync.js"></script>
+</body>
+</html>

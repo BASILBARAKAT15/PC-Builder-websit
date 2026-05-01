@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory (RAM) - PC Builder</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <link rel="stylesheet" href="../CSSPage/Memory.css">
+</head>
+<body>
+
+<header class="navbar"></header>
+<script>document.addEventListener('DOMContentLoaded', () => generateNavbar('build'));</script>
+
+<section class="memory-hero">
+    <h1>🖥️ Top RAM Modules</h1>
+    <p>High-performance memory for gaming and professional builds</p>
+</section>
+
+<section class="section-box">
+    
+    <div class="filter-bar">
+        <input type="text" class="search-input" placeholder="🔍 Search products..." oninput="filterProducts(this.value)">
+        <select class="filter-select" onchange="sortProducts(this.value)">
+            <option value="">Sort by</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name: A-Z</option>
+        </select>
+    </div>
+
+    <div class="grid">
+
+        <div class="memory-card" data-name="Corsair Vengeance RGB Pro 16GB" data-specs="{&quot;Brand&quot;: &quot;Corsair&quot;, &quot;Capacity&quot;: &quot;16GB (2x8GB)&quot;, &quot;Type&quot;: &quot;DDR4&quot;, &quot;Speed&quot;: &quot;3200 MHz&quot;, &quot;CAS Latency&quot;: &quot;CL16&quot;, &quot;Voltage&quot;: &quot;1.35V&quot;, &quot;RGB&quot;: &quot;Yes&quot;, &quot;Heat Spreader&quot;: &quot;Aluminum&quot;, &quot;XMP&quot;: &quot;2.0&quot;, &quot;Form Factor&quot;: &quot;DIMM&quot;}" data-price="90" data-image="../Image/Corsair Vengeance RGB Pro 16GB.jfif">
+            <img src="../Image/Corsair Vengeance RGB Pro 16GB.jfif" alt="Corsair Vengeance RGB Pro 16GB">
+            <h3>Corsair Vengeance RGB Pro 16GB</h3>
+            <p>High-speed RGB memory for gaming rigs</p>
+            <span class="price">$90</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        <div class="memory-card" data-name="G.Skill Trident Z RGB 32GB" data-specs="{&quot;Brand&quot;: &quot;G.Skill&quot;, &quot;Capacity&quot;: &quot;32GB (2x16GB)&quot;, &quot;Type&quot;: &quot;DDR4&quot;, &quot;Speed&quot;: &quot;3600 MHz&quot;, &quot;CAS Latency&quot;: &quot;CL16&quot;, &quot;Voltage&quot;: &quot;1.35V&quot;, &quot;RGB&quot;: &quot;Yes&quot;, &quot;XMP&quot;: &quot;2.0&quot;}" data-price="160" data-image="../Image/G.Skill Trident Z RGB 32GB.jfif">
+            <img src="../Image/G.Skill Trident Z RGB 32GB.jfif" alt="G.Skill Trident Z RGB 32GB">
+            <h3>G.Skill Trident Z RGB 32GB</h3>
+            <p>Premium performance with stylish RGB lighting</p>
+            <span class="price">$160</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        <div class="memory-card" data-name="Kingston HyperX Fury 16GB" data-specs="{&quot;Brand&quot;: &quot;Kingston&quot;, &quot;Capacity&quot;: &quot;16GB (2x8GB)&quot;, &quot;Type&quot;: &quot;DDR4&quot;, &quot;Speed&quot;: &quot;3200 MHz&quot;, &quot;CAS Latency&quot;: &quot;CL16&quot;, &quot;Voltage&quot;: &quot;1.2V&quot;, &quot;RGB&quot;: &quot;No&quot;, &quot;Heat Spreader&quot;: &quot;Aluminum&quot;, &quot;XMP&quot;: &quot;Ready&quot;, &quot;Form Factor&quot;: &quot;DIMM&quot;}" data-price="75" data-image="../Image/Kingston HyperX Fury 16GB.jfif">
+            <img src="../Image/Kingston HyperX Fury 16GB.jfif" alt="Kingston HyperX Fury 16GB">
+            <h3>Kingston HyperX Fury 16GB</h3>
+            <p>Reliable memory for smooth multitasking</p>
+            <span class="price">$75</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        <div class="memory-card" data-name="Crucial Ballistix 32GB" data-specs="{&quot;Brand&quot;: &quot;Crucial&quot;, &quot;Capacity&quot;: &quot;32GB (2x16GB)&quot;, &quot;Type&quot;: &quot;DDR4&quot;, &quot;Speed&quot;: &quot;3600 MHz&quot;, &quot;CAS Latency&quot;: &quot;CL16&quot;, &quot;Voltage&quot;: &quot;1.35V&quot;, &quot;RGB&quot;: &quot;No&quot;, &quot;XMP&quot;: &quot;2.0&quot;}" data-price="150" data-image="../Image/Crucial Ballistix 32GB.jfif">
+            <img src="../Image/Crucial Ballistix 32GB.jfif" alt="Crucial Ballistix 32GB">
+            <h3>Crucial Ballistix 32GB</h3>
+            <p>High-performance RAM for gamers and creators</p>
+            <span class="price">$150</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        <div class="memory-card" data-name="Patriot Viper Steel 16GB" data-specs="{&quot;Brand&quot;: &quot;Patriot&quot;, &quot;Capacity&quot;: &quot;16GB (2x8GB)&quot;, &quot;Type&quot;: &quot;DDR4&quot;, &quot;Speed&quot;: &quot;3200 MHz&quot;, &quot;CAS Latency&quot;: &quot;CL16&quot;, &quot;Voltage&quot;: &quot;1.35V&quot;, &quot;RGB&quot;: &quot;No&quot;, &quot;Heat Spreader&quot;: &quot;Steel Gray&quot;, &quot;XMP&quot;: &quot;2.0&quot;, &quot;Form Factor&quot;: &quot;DIMM&quot;}" data-price="80" data-image="../Image/Patriot Viper Steel 16GB.jfif">
+            <img src="../Image/Patriot Viper Steel 16GB.jfif" alt="Patriot Viper Steel 16GB">
+            <h3>Patriot Viper Steel 16GB</h3>
+            <p>Durable memory with aggressive performance</p>
+            <span class="price">$80</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        <div class="memory-card" data-name="Team T-Force Delta RGB 16GB" data-specs="{&quot;Brand&quot;: &quot;Team Group&quot;, &quot;Capacity&quot;: &quot;16GB (2x8GB)&quot;, &quot;Type&quot;: &quot;DDR4&quot;, &quot;Speed&quot;: &quot;3200 MHz&quot;, &quot;CAS Latency&quot;: &quot;CL16&quot;, &quot;Voltage&quot;: &quot;1.35V&quot;, &quot;RGB&quot;: &quot;Yes&quot;, &quot;XMP&quot;: &quot;2.0&quot;}" data-price="85" data-image="../Image/Team T-Force Delta RGB 16GBjfif.jfif">
+            <img src="../Image/Team T-Force Delta RGB 16GBjfif.jfif" alt="Team T-Force Delta RGB 16GB">
+            <h3>Team T-Force Delta RGB 16GB</h3>
+            <p>Fast memory with vibrant RGB lighting</p>
+            <span class="price">$85</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        <div class="memory-card" data-name="ADATA XPG Spectrix D50 16GB" data-specs="{&quot;Brand&quot;: &quot;ADATA&quot;, &quot;Capacity&quot;: &quot;16GB (2x8GB)&quot;, &quot;Type&quot;: &quot;DDR4&quot;, &quot;Speed&quot;: &quot;3200 MHz&quot;, &quot;CAS Latency&quot;: &quot;CL16&quot;, &quot;Voltage&quot;: &quot;1.35V&quot;, &quot;RGB&quot;: &quot;Yes&quot;, &quot;Heat Spreader&quot;: &quot;Diamond Cut&quot;, &quot;XMP&quot;: &quot;2.0&quot;, &quot;Form Factor&quot;: &quot;DIMM&quot;}" data-price="85" data-image="../Image/ADATA XPG Spectrix D50 16GB.jfif">
+            <img src="../Image/ADATA XPG Spectrix D50 16GB.jfif" alt="ADATA XPG Spectrix D50 16GB">
+            <h3>ADATA XPG Spectrix D50 16GB</h3>
+            <p>High-speed memory with stylish RGB for gaming builds</p>
+            <span class="price">$85</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        <div class="memory-card" data-name="Team Group Night Hawk RGB 32GB" data-specs="{&quot;Brand&quot;: &quot;Team Group&quot;, &quot;Capacity&quot;: &quot;32GB (2x16GB)&quot;, &quot;Type&quot;: &quot;DDR4&quot;, &quot;Speed&quot;: &quot;3600 MHz&quot;, &quot;CAS Latency&quot;: &quot;CL18&quot;, &quot;Voltage&quot;: &quot;1.35V&quot;, &quot;RGB&quot;: &quot;Yes&quot;, &quot;XMP&quot;: &quot;2.0&quot;}" data-price="170" data-image="../Image/Team Group Night Hawk RGB 32GB.jfif">
+            <img src="../Image/Team Group Night Hawk RGB 32GB.jfif" alt="Team Group Night Hawk RGB 32GB">
+            <h3>Team Group Night Hawk RGB 32GB</h3>
+            <p>Fast memory with aggressive RGB design for gamers</p>
+            <span class="price">$170</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        <!-- NEW DDR5 MODULES ADDED BELOW -->
+        <div class="memory-card" data-name="Corsair Vengeance RGB DDR5 32GB" data-specs="{&quot;Brand&quot;: &quot;Corsair&quot;, &quot;Capacity&quot;: &quot;32GB (2x16GB)&quot;, &quot;Type&quot;: &quot;DDR5&quot;, &quot;Speed&quot;: &quot;6000 MHz&quot;, &quot;CAS Latency&quot;: &quot;CL36&quot;, &quot;Voltage&quot;: &quot;1.25V&quot;, &quot;RGB&quot;: &quot;Yes&quot;, &quot;Heat Spreader&quot;: &quot;Aluminum&quot;, &quot;XMP&quot;: &quot;3.0&quot;, &quot;Form Factor&quot;: &quot;DIMM&quot;}" data-price="130" data-image="../Image/Corsair Vengeance RGB DDR5 32GB.jfif">
+            <img src="../Image/Corsair Vengeance RGB DDR5 32GB.jfif" alt="Corsair Vengeance RGB DDR5 32GB">
+            <h3>Corsair Vengeance RGB DDR5 32GB</h3>
+            <p>Ultra-fast DDR5 with vibrant RGB for next-gen gaming and productivity</p>
+            <span class="price">$130</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        <div class="memory-card" data-name="G.Skill Trident Z5 RGB 32GB" data-specs="{&quot;Brand&quot;: &quot;G.Skill&quot;, &quot;Capacity&quot;: &quot;32GB (2x16GB)&quot;, &quot;Type&quot;: &quot;DDR5&quot;, &quot;Speed&quot;: &quot;6400 MHz&quot;, &quot;CAS Latency&quot;: &quot;CL32&quot;, &quot;Voltage&quot;: &quot;1.35V&quot;, &quot;RGB&quot;: &quot;Yes&quot;, &quot;XMP&quot;: &quot;3.0&quot;}" data-price="185" data-image="../Image/G.Skill Trident Z5 RGB 32GB.jfif">
+            <img src="../Image/G.Skill Trident Z5 RGB 32GB.jfif" alt="G.Skill Trident Z5 RGB 32GB">
+            <h3>G.Skill Trident Z5 RGB 32GB</h3>
+            <p>Premium DDR5 performance with stunning RGB for enthusiasts</p>
+            <span class="price">$185</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        <div class="memory-card" data-name="Kingston Fury Beast DDR5 16GB" data-specs="{&quot;Brand&quot;: &quot;Kingston&quot;, &quot;Capacity&quot;: &quot;16GB (2x8GB)&quot;, &quot;Type&quot;: &quot;DDR5&quot;, &quot;Speed&quot;: &quot;6000 MHz&quot;, &quot;CAS Latency&quot;: &quot;CL36&quot;, &quot;Voltage&quot;: &quot;1.25V&quot;, &quot;RGB&quot;: &quot;No&quot;, &quot;Heat Spreader&quot;: &quot;Aluminum&quot;, &quot;XMP&quot;: &quot;3.0&quot;, &quot;Form Factor&quot;: &quot;DIMM&quot;}" data-price="95" data-image="../Image/Kingston Fury Beast DDR5 16GB.jfif">
+            <img src="../Image/Kingston Fury Beast DDR5 16GB.jfif" alt="Kingston Fury Beast DDR5 16GB">
+            <h3>Kingston Fury Beast DDR5 16GB</h3>
+            <p>Affordable high-speed DDR5 for reliable performance upgrades</p>
+            <span class="price">$95</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        <div class="memory-card" data-name="Team T-Force Delta RGB DDR5 32GB" data-specs="{&quot;Brand&quot;: &quot;Team Group&quot;, &quot;Capacity&quot;: &quot;32GB (2x16GB)&quot;, &quot;Type&quot;: &quot;DDR5&quot;, &quot;Speed&quot;: &quot;6000 MHz&quot;, &quot;CAS Latency&quot;: &quot;CL38&quot;, &quot;Voltage&quot;: &quot;1.25V&quot;, &quot;RGB&quot;: &quot;Yes&quot;, &quot;XMP&quot;: &quot;3.0&quot;}" data-price="155" data-image="../Image/Team T-Force Delta RGB DDR5 32GB.jfif">
+            <img src="../Image/Team T-Force Delta RGB DDR5 32GB.jfif" alt="Team T-Force Delta RGB DDR5 32GB">
+            <h3>Team T-Force Delta RGB DDR5 32GB</h3>
+            <p>Vibrant RGB DDR5 memory optimized for gaming and overclocking</p>
+            <span class="price">$155</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 PC Builder. All rights reserved.</p>
+</footer>
+
+<script src="../Js/api.js"></script>
+<script src="../Js/utils.js"></script>
+<script src="../Js/ai-chat.js"></script>
+<script src="../Js/Memory.js"></script>
+
+<script src="../Js/products-sync.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>(function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking - PC Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <link rel="stylesheet" href="../CSSPage/tracking.css">
+</head>
+<body>
+
+<header class="navbar"></header>
+<script src="../Js/api.js"></script>
+<script src="../Js/utils.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => generateNavbar(''));</script>
+
+<section class="section-box" style="max-width:700px;">
+    <h1>📦 Order Tracking</h1>
+    <div id="trackingContent">Loading...</div>
+</section>
+
+<footer class="footer"><p>© 2026 PC Builder. All rights reserved.</p></footer>
+
+<script src="../Js/ai-chat.js"></script>
+<script>
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+window.addEventListener('DOMContentLoaded', async () => {
+    const params    = new URLSearchParams(window.location.search);
+    const orderId   = params.get('id');
+    const container = document.getElementById('trackingContent');
+
+    if (!orderId) {
+        container.innerHTML = '<p style="text-align:center;padding:40px;color:var(--text-secondary);">No order id. <a href="profile.html" style="color:var(--primary);">Go to profile</a></p>';
+        return;
+    }
+
+    let order;
+    try { const res = await API.orders.get(orderId); order = res.order; }
+    catch (err) {
+        container.innerHTML = `<p style="text-align:center;padding:40px;color:var(--text-secondary);">${escapeHtml(err.message||'Order not found.')} <a href="profile.html" style="color:var(--primary);">Go to profile</a></p>`;
+        return;
+    }
+    if (!order) { container.innerHTML = '<p style="text-align:center;padding:40px;">Order not found.</p>'; return; }
+
+    const steps = [
+        { key:'pending',    icon:'📋', label:'Order Placed', desc:'Your order has been received' },
+        { key:'processing', icon:'💳', label:'Processing',   desc:'Your payment has been processed' },
+        { key:'shipped',    icon:'🚚', label:'Shipped',      desc:'Your order is on the way' },
+        { key:'delivered',  icon:'✅', label:'Delivered',    desc:'Your order has been delivered' },
+    ];
+
+    const status    = String(order.status || 'pending').toLowerCase();
+    const cancelled = status === 'cancelled';
+    const statusIdx = steps.findIndex(s => s.key === status);
+
+    const timelineHTML = cancelled
+        ? `<div class="timeline-step cancelled"><div class="timeline-icon">❌</div><div class="timeline-info"><h3>Cancelled</h3><p>This order was cancelled.</p></div></div>`
+        : steps.map((step,i) => {
+            const done=i<=statusIdx, current=i===statusIdx;
+            return `<div class="timeline-step ${done?'done':''} ${current?'current':''}"><div class="timeline-icon">${step.icon}</div><div class="timeline-info"><h3>${step.label}</h3><p>${step.desc}</p></div></div>`;
+        }).join('');
+
+    const items = order.items || [];
+    const itemsHTML = items.map(item => `
+        <div class="track-item">
+            <img src="${escapeHtml(item.image||'')}" alt="${escapeHtml(item.product_name)}" onerror="this.src='../Image/PCImage.png'">
+            <div>
+                <p style="font-weight:600;">${escapeHtml(item.product_name)} × ${item.quantity}</p>
+                <p style="color:var(--text-secondary);font-size:13px;">$${parseFloat(item.price).toLocaleString()}</p>
+            </div>
+        </div>`).join('');
+
+    container.innerHTML = `
+        <div class="track-header">
+            <div>
+                <h2>Order #${String(order.id).padStart(6,'0')}</h2>
+                <p style="color:var(--text-secondary);font-size:14px;">Placed on ${new Date(order.created_at).toLocaleDateString()}</p>
+            </div>
+            <div style="text-align:right;">
+                <span class="badge badge-${escapeHtml(status)}">${escapeHtml(status)}</span>
+                <p style="font-size:20px;font-weight:700;color:var(--primary);margin-top:6px;">$${parseFloat(order.total_price).toLocaleString()}</p>
+            </div>
+        </div>
+        <div class="timeline">${timelineHTML}</div>
+        <h3 style="margin:24px 0 12px;">Items (${items.length})</h3>
+        <div class="track-items">${itemsHTML}</div>
+        <div style="margin-top:24px;display:flex;gap:10px;">
+            <button class="btn btn-primary" id="btnPrintInvoice">🖨️ Print Invoice</button>
+            <a href="profile.html" class="btn btn-secondary">← Back to Profile</a>
+        </div>`;
+
+    document.getElementById('btnPrintInvoice').addEventListener('click', () => {
+        const w = window.open('', '_blank');
+        const rowsHTML = items.map(i => `<tr><td>${escapeHtml(i.product_name)} × ${i.quantity}</td><td>$${(parseFloat(i.price)*i.quantity).toLocaleString()}</td></tr>`).join('');
+        w.document.write(`<html><head><title>Invoice #${String(order.id).padStart(6,'0')}</title><style>body{font-family:'Segoe UI',sans-serif;padding:40px;color:#111}h1{font-size:24px;margin-bottom:4px}.info{color:#666;margin-bottom:20px}table{width:100%;border-collapse:collapse;margin:20px 0}th,td{padding:10px 14px;text-align:left;border-bottom:1px solid #eee}th{background:#f5f5f5;font-size:12px;text-transform:uppercase}.total{text-align:right;font-size:20px;font-weight:700;margin-top:16px}.footer{margin-top:40px;color:#999;font-size:12px;text-align:center}</style></head><body><h1>🖥️ PC Builder - Invoice</h1><p class="info">Order #${String(order.id).padStart(6,'0')} — ${new Date(order.created_at).toLocaleDateString()}<br>Ship to: ${escapeHtml(order.shipping_name)}, ${escapeHtml(order.shipping_address)}</p><table><thead><tr><th>Item</th><th>Subtotal</th></tr></thead><tbody>${rowsHTML}</tbody></table><p class="total">Total: $${parseFloat(order.total_price).toLocaleString()}</p><p class="footer">Thank you for shopping with PC Builder!</p></body></html>`);
+        w.document.close();
+        w.print();
+    });
+});
+</script>
+</body>
+</html>

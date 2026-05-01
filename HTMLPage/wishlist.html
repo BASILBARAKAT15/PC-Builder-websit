@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist - PC Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <style>
+        .wishlist-section { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .wishlist-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+        .wishlist-header h1 { font-size: 28px; color: var(--text-primary); margin: 0; }
+        .wishlist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .wish-card { background: var(--bg-card); border-radius: 12px; padding: 16px; box-shadow: var(--shadow-sm); transition: 0.3s; position: relative; }
+        .wish-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .wish-card img { width: 100%; height: 160px; object-fit: contain; margin-bottom: 10px; }
+        .wish-card h3 { font-size: 15px; margin: 6px 0; color: var(--text-primary); min-height: 40px; }
+        .wish-card .price { font-size: 18px; font-weight: 700; color: var(--primary); margin: 8px 0; }
+        .wish-card .category { display: inline-block; background: var(--gray-100); padding: 2px 8px; border-radius: 12px; font-size: 11px; color: var(--text-secondary); margin-bottom: 6px; }
+        .wish-card .actions { display: flex; gap: 8px; margin-top: 10px; }
+        .wish-card .btn { flex: 1; padding: 8px; font-size: 13px; }
+        .remove-btn-wish { background: #ef4444; color: #fff; border: none; padding: 8px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; }
+        .remove-btn-wish:hover { background: #dc2626; }
+        .empty-wishlist { text-align: center; padding: 80px 20px; color: var(--text-secondary); }
+        .empty-wishlist .icon { font-size: 60px; margin-bottom: 16px; }
+    </style>
+</head>
+<body>
+
+<header class="navbar"></header>
+<script src="../Js/api.js"></script>
+<script src="../Js/utils.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => generateNavbar(''));</script>
+
+<section class="wishlist-section">
+    <div class="wishlist-header">
+        <h1>❤️ My Wishlist</h1>
+        <div>
+            <button class="btn btn-secondary" onclick="clearWishlist()" id="clearBtn" style="display:none;">🗑️ Clear All</button>
+            <a href="build.html" class="btn btn-primary" style="text-decoration:none;">Continue Shopping</a>
+        </div>
+    </div>
+    <div id="wishlistContent"></div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 PC Builder. All rights reserved.</p>
+</footer>
+
+<script src="../Js/ai-chat.js"></script>
+<script>
+function renderWishlist() {
+    const list = getWishlist();
+    const container = document.getElementById('wishlistContent');
+    const clearBtn  = document.getElementById('clearBtn');
+
+    if (!list || list.length === 0) {
+        if (clearBtn) clearBtn.style.display = 'none';
+        container.innerHTML = `
+            <div class="empty-wishlist">
+                <div class="icon">💔</div>
+                <h2>Your wishlist is empty</h2>
+                <p style="margin-top:10px;">Start adding items by clicking the 🤍 icon on any product card.</p>
+            </div>`;
+        return;
+    }
+
+    if (clearBtn) clearBtn.style.display = '';
+
+    container.innerHTML = '<div class="wishlist-grid">' + list.map((item, idx) => `
+        <div class="wish-card">
+            <img src="${escapeHtml(item.image || '')}" alt="${escapeHtml(item.name)}" onerror="this.src='../Image/PCImage.png'">
+            ${item.category ? `<span class="category">${escapeHtml(item.category)}</span>` : ''}
+            <h3>${escapeHtml(item.name)}</h3>
+            <p class="price">$${Number(item.price || 0).toLocaleString()}</p>
+            <div class="actions">
+                <button class="btn btn-primary" data-idx="${idx}" onclick="addFromWishlist(this.dataset.idx)">🛒 Add to Cart</button>
+                <button class="remove-btn-wish" data-name="${escapeHtml(item.name)}" onclick="removeFromWishlist(this.dataset.name)" title="Remove from wishlist">🗑️</button>
+            </div>
+        </div>
+    `).join('') + '</div>';
+}
+
+async function addFromWishlist(idx) {
+    const list = getWishlist();
+    const item = list[Number(idx)];
+    if (!item) return;
+    addToCart({
+        name: item.name,
+        price: Number(item.price) || 0,
+        image: item.image || '',
+        category: item.category || '',
+    });
+}
+
+async function removeFromWishlist(name) {
+    const list = getWishlist().filter(w => w.name !== name);
+    localStorage.setItem('wishlist', JSON.stringify(list));
+    showNotification(`${name} removed from wishlist`, 'info');
+    // Sync with server (best-effort)
+    if (window.API && API.wishlist) {
+        try { await API.wishlist.remove(name); } catch(_) {}
+    }
+    if (typeof updateWishlistButtons === 'function') updateWishlistButtons();
+    renderWishlist();
+}
+
+async function clearWishlist() {
+    if (!confirm('Clear your entire wishlist?')) return;
+    localStorage.removeItem('wishlist');
+    if (window.API && API.wishlist) {
+        try { await API.wishlist.clear(); } catch(_) {}
+    }
+    if (typeof updateWishlistButtons === 'function') updateWishlistButtons();
+    renderWishlist();
+    showNotification('Wishlist cleared', 'info');
+}
+
+window.addFromWishlist    = addFromWishlist;
+window.removeFromWishlist = removeFromWishlist;
+window.clearWishlist      = clearWishlist;
+
+window.addEventListener('DOMContentLoaded', () => {
+    // syncWishlistFromServer runs inside generateNavbar (for logged-in users);
+    // wait a moment so it can finish, then render.
+    setTimeout(renderWishlist, 500);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooling Systems - PC Builder</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSSPage/global.css">
+    <link rel="stylesheet" href="../CSSPage/CoolingSystem.css">
+</head>
+<body>
+
+<header class="navbar"></header>
+<script>document.addEventListener('DOMContentLoaded', () => generateNavbar('build'));</script>
+
+<section class="cooling-hero">
+    <h1>❄️ Top Cooling Systems</h1>
+    <p>Keep your PC cool with high-performance air and liquid coolers</p>
+</section>
+
+<section class="section-box">
+    
+    <div class="filter-bar">
+        <input type="text" class="search-input" placeholder="🔍 Search products..." oninput="filterProducts(this.value)">
+        <select class="filter-select" onchange="sortProducts(this.value)">
+            <option value="">Sort by</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name">Name: A-Z</option>
+        </select>
+    </div>
+
+    <div class="grid">
+
+        
+        <div class="cooling-card" data-name="Noctua NH-D15" data-specs="{&quot;Brand&quot;: &quot;Noctua&quot;, &quot;Type&quot;: &quot;Air Cooler&quot;, &quot;Fan Count&quot;: &quot;2x 140mm&quot;, &quot;Height&quot;: &quot;165mm&quot;, &quot;TDP Rating&quot;: &quot;250W&quot;, &quot;Noise Level&quot;: &quot;24.6 dBA&quot;, &quot;Socket&quot;: &quot;AM4/AM5/LGA1700/LGA1200&quot;, &quot;Fan Speed&quot;: &quot;300-1500 RPM&quot;, &quot;RGB&quot;: &quot;No&quot;, &quot;Warranty&quot;: &quot;6 Years&quot;}" data-price="100">
+            <img src="../Image/Noctua NH-D15.jfif" alt="Noctua NH-D15">
+            <h3>Noctua NH-D15</h3>
+            <p>Premium air cooler with exceptional thermal performance</p>
+            <span class="price">$100</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="cooling-card" data-name="Corsair iCUE H100i RGB" data-image="../Image/Corsair iCUE H100i RGB.jfif" data-specs="{&quot;Brand&quot;: &quot;Corsair&quot;, &quot;Type&quot;: &quot;AIO 240mm&quot;, &quot;Fans&quot;: &quot;2x 120mm&quot;, &quot;Radiator&quot;: &quot;240mm&quot;, &quot;TDP&quot;: &quot;350W+&quot;, &quot;Noise&quot;: &quot;20-36 dBA&quot;, &quot;Socket&quot;: &quot;AM4/AM5/LGA1700&quot;, &quot;RGB&quot;: &quot;Yes iCUE&quot;, &quot;Warranty&quot;: &quot;5 Years&quot;}" data-price="130">
+            <img src="../Image/Corsair iCUE H100i RGB.jfif" alt="Corsair H100i RGB">
+            <h3>Corsair iCUE H100i RGB</h3>
+            <p>240mm liquid cooler with customizable RGB lighting</p>
+            <span class="price">$130</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="cooling-card" data-name="be quiet! Dark Rock Pro 4" data-specs="{&quot;Brand&quot;: &quot;be quiet!&quot;, &quot;Type&quot;: &quot;Air Cooler&quot;, &quot;Fan Count&quot;: &quot;2x (135mm + 120mm)&quot;, &quot;Height&quot;: &quot;163mm&quot;, &quot;TDP Rating&quot;: &quot;250W&quot;, &quot;Noise Level&quot;: &quot;24.3 dBA&quot;, &quot;Socket&quot;: &quot;AM4/AM5/LGA1700/LGA1200&quot;, &quot;Fan Speed&quot;: &quot;1500 RPM&quot;, &quot;RGB&quot;: &quot;No&quot;, &quot;Warranty&quot;: &quot;3 Years&quot;}" data-price="95">
+            <img src="../Image/be quiet! Dark Rock Pro 4.jfif" alt="Dark Rock Pro 4">
+            <h3>be quiet! Dark Rock Pro 4</h3>
+            <p>Silent high-performance air cooler for powerful CPUs</p>
+            <span class="price">$95</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="cooling-card" data-name="NZXT Kraken X63" data-image="../Image/NZXT Kraken X63.jfif" data-specs="{&quot;Brand&quot;: &quot;NZXT&quot;, &quot;Type&quot;: &quot;AIO 280mm&quot;, &quot;Fans&quot;: &quot;2x 140mm&quot;, &quot;Radiator&quot;: &quot;280mm&quot;, &quot;TDP&quot;: &quot;350W+&quot;, &quot;Noise&quot;: &quot;21-36 dBA&quot;, &quot;Socket&quot;: &quot;AM4/AM5/LGA1700&quot;, &quot;RGB&quot;: &quot;Yes Infinity Mirror&quot;, &quot;Warranty&quot;: &quot;6 Years&quot;}" data-price="150">
+            <img src="../Image/NZXT Kraken X63.jfif" alt="NZXT Kraken X63">
+            <h3>NZXT Kraken X63</h3>
+            <p>280mm all-in-one liquid cooler with RGB lighting</p>
+            <span class="price">$150</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="cooling-card" data-name="Cooler Master Hyper 212 RGB" data-specs="{&quot;Brand&quot;: &quot;Cooler Master&quot;, &quot;Type&quot;: &quot;Air Cooler&quot;, &quot;Fan Count&quot;: &quot;1x 120mm&quot;, &quot;Height&quot;: &quot;159mm&quot;, &quot;TDP Rating&quot;: &quot;150W&quot;, &quot;Noise Level&quot;: &quot;26 dBA&quot;, &quot;Socket&quot;: &quot;AM4/AM5/LGA1700/LGA1200&quot;, &quot;Fan Speed&quot;: &quot;650-2000 RPM&quot;, &quot;RGB&quot;: &quot;Yes&quot;, &quot;Warranty&quot;: &quot;2 Years&quot;}" data-price="50">
+            <img src="../Image/Cooler Master Hyper 212 RGB.jfif" alt="Cooler Master Hyper 212 RGB">
+            <h3>Cooler Master Hyper 212 RGB</h3>
+            <p>Affordable and reliable air cooler for mid-range CPUs</p>
+            <span class="price">$50</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="cooling-card" data-name="Corsair H150i Elite Capellix" data-image="../Image/Corsair H150i Elite Capellix.jfif" data-specs="{&quot;Brand&quot;: &quot;Corsair&quot;, &quot;Type&quot;: &quot;AIO 360mm&quot;, &quot;Fans&quot;: &quot;3x 120mm&quot;, &quot;Radiator&quot;: &quot;360mm&quot;, &quot;TDP&quot;: &quot;400W+&quot;, &quot;Noise&quot;: &quot;20-36 dBA&quot;, &quot;Socket&quot;: &quot;AM4/AM5/LGA1700&quot;, &quot;RGB&quot;: &quot;Yes Capellix&quot;, &quot;Warranty&quot;: &quot;5 Years&quot;}" data-price="200">
+            <img src="../Image/Corsair H150i Elite Capellix.jfif" alt="Corsair H150i Elite Capellix">
+            <h3>Corsair H150i Elite Capellix</h3>
+            <p>360mm AIO cooler with vibrant RGB lighting</p>
+            <span class="price">$200</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="cooling-card" data-name="Deepcool Gammaxx 400" data-specs="{&quot;Brand&quot;: &quot;Deepcool&quot;, &quot;Type&quot;: &quot;Air Cooler&quot;, &quot;Fan Count&quot;: &quot;1x 120mm&quot;, &quot;Height&quot;: &quot;155mm&quot;, &quot;TDP Rating&quot;: &quot;130W&quot;, &quot;Noise Level&quot;: &quot;27 dBA&quot;, &quot;Socket&quot;: &quot;AM4/LGA1200/LGA1700&quot;, &quot;Fan Speed&quot;: &quot;900-1500 RPM&quot;, &quot;RGB&quot;: &quot;No&quot;, &quot;Warranty&quot;: &quot;2 Years&quot;}" data-price="35">
+            <img src="../Image/Deepcool Gammaxx 400.jfif" alt="Deepcool Gammaxx 400">
+            <h3>Deepcool Gammaxx 400</h3>
+            <p>Budget-friendly air cooler with good performance</p>
+            <span class="price">$35</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+        
+        <div class="cooling-card" data-name="Arctic Liquid Freezer II 280" data-image="../Image/Arctic Liquid Freezer II 280.jfif" data-specs="{&quot;Brand&quot;: &quot;Arctic&quot;, &quot;Type&quot;: &quot;AIO 280mm&quot;, &quot;Fans&quot;: &quot;2x 140mm&quot;, &quot;Radiator&quot;: &quot;280mm&quot;, &quot;TDP&quot;: &quot;350W+&quot;, &quot;Noise&quot;: &quot;22.5 dBA&quot;, &quot;Socket&quot;: &quot;AM4/AM5/LGA1700&quot;, &quot;RGB&quot;: &quot;No&quot;, &quot;Warranty&quot;: &quot;6 Years&quot;}" data-price="130">
+            <img src="../Image/Arctic Liquid Freezer II 280.jfif" alt="Arctic Liquid Freezer II 280">
+            <h3>Arctic Liquid Freezer II 280</h3>
+            <p>Efficient and quiet 280mm liquid cooler</p>
+            <span class="price">$130</span>
+            <button class="buy-btn">Buy</button>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 PC Builder. All rights reserved.</p>
+</footer>
+
+<script src="../Js/api.js"></script>
+<script src="../Js/utils.js"></script>
+<script src="../Js/ai-chat.js"></script>
+<script src="../Js/Coolingsystem.js"></script>
+
+<script src="../Js/products-sync.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+-- Seed: products extracted from category HTML pages
+USE pcbuilder_db;
+
+INSERT INTO products (name, price, category, stock, image) VALUES ('Razer Huntsman Elite Keyboard', 200.0, 'Peripherals', 50, '../Image/Razer Huntsman Elite Keyboard.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Logitech G502 Hero Mouse', 80.0, 'Peripherals', 50, '../Image/Logitech G502 Hero Mouse.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('HyperX Cloud II Headset', 100.0, 'Peripherals', 50, '../Image/HyperX Cloud II Headset.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('SteelSeries QcK Gaming Mousepad', 25.0, 'Peripherals', 50, '../Image/SteelSeries QcK Gaming Mousepad.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Xbox Elite Series 2 Controller', 180.0, 'Peripherals', 50, '../Image/Xbox Elite Series 2 Controller.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Secretlab Titan Gaming Chair', 450.0, 'Peripherals', 50, '../Image/Secretlab Titan Gaming Chair.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('ASUS ROG Swift 27 144Hz', 350.0, 'Peripherals', 50, '../Image/ASUS ROG Swift 27 144Hz.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Corsair iCUE Lighting Node PRO', 80.0, 'Peripherals', 50, '../Image/Corsair iCUE Lighting Node PRO.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Logitech G923 Racing Wheel', 400.0, 'Peripherals', 50, '../Image/Logitech G923 Racing Wheel.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Oculus Quest 2 VR Headset', 350.0, 'Peripherals', 50, '../Image/Oculus Quest 2 VR Headset.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Blue Yeti USB Microphone', 120.0, 'Peripherals', 50, '../Image/Blue Yeti USB Microphone.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Hori Flex Controller Stand', 60.0, 'Peripherals', 50, '../Image/Hori Flex Controller Stand.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Razer Basilisk V3 Mouse', 90.0, 'Peripherals', 50, '../Image/Razer Basilisk V3 Mouse.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Corsair K95 RGB Platinum', 210.0, 'Peripherals', 50, '../Image/Corsair K95 RGB Platinum.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('SteelSeries Arctis 7 Headset', 150.0, 'Peripherals', 50, '../Image/SteelSeries Arctis 7.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Elgato Stream Deck MK2', 160.0, 'Peripherals', 50, '../Image/Elgato Stream Deck MK2.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Logitech G Pro X Superlight', 150.0, 'Peripherals', 50, '../Image/Logitech G Pro X Superlight.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Razer Seiren X Microphone', 110.0, 'Peripherals', 50, '../Image/Razer Seiren X Microphone.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Glorious Model O Mouse', 70.0, 'Peripherals', 50, '../Image/Glorious Model O.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('BenQ Zowie XL2411K Monitor', 300.0, 'Peripherals', 50, '../Image/BenQ Zowie XL2411K.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Gaming Beast X1', 2500.0, 'Pre-Built', 50, '../Image/prePC1.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Budget Gamer V2', 1200.0, 'Pre-Built', 50, '../Image/prePC2.jpg');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Workstation Pro Z', 3200.0, 'Pre-Built', 50, '../Image/prePC3.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Stealth Gamer S4', 2000.0, 'Pre-Built', 50, '../Image/pc5.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Mini Powerhouse M2', 1400.0, 'Pre-Built', 50, '../Image/pc9.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Ultimate Creator C9', 3500.0, 'Pre-Built', 50, '../Image/pc7.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Phantom Gamer P7', 2200.0, 'Pre-Built', 50, '../Image/pc8.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Creator Xtreme C8', 3700.0, 'Pre-Built', 50, '../Image/pc6.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('LG OLED C3 55”', 1600.0, 'Pre-Built', 50, '../Image/LG OLED C3 55.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Samsung Neo QLED QN90C', 1800.0, 'Pre-Built', 50, '../Image/Samsung Neo QLED QN90C.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Sony Bravia XR A80L', 1700.0, 'Pre-Built', 50, '../Image/Sony Bravia XR A80L.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Panasonic JZ2000 65”', 1900.0, 'Pre-Built', 50, '../Image/Panasonic JZ2000 65.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('TCL 6-Series 55”', 900.0, 'Pre-Built', 50, '../Image/TCL 6-Series 55.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Hisense U8H 65”', 1100.0, 'Pre-Built', 50, '../Image/Hisense U8H 65.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('LG OLED G2 65”', 2100.0, 'Pre-Built', 50, '../Image/LG OLED G2 65.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Samsung QN95C 65”', 2000.0, 'Pre-Built', 50, '../Image/Samsung QN95C 65.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('LG OLED C3', 1600.0, 'Trending', 50, '../Image/LG OLED C3 55.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Samsung Neo QLED', 1800.0, 'Trending', 50, '../Image/Samsung Neo QLED QN90C.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('RGB Mechanical Keyboard', 150.0, 'Trending', 50, '../Image/RGB Mechanical Keyboard.jfif');
+
+-- ============================================
+-- Extra products extracted from category HTML pages
+-- (CPU, GPU, RAM, Motherboard, Storage, Power Supply, Cooling)
+-- Added to fix Issue #3 — 6 category pages were empty in DB
+-- ============================================
+INSERT INTO products (name, price, category, stock, image) VALUES ('AMD Ryzen 5 7600X', 249, 'CPU', 50, '../Image/AMD Ryzen 5 7600X.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('AMD Ryzen 9 7950X', 699, 'CPU', 50, '../Image/AMD Ryzen 9 7950X.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Intel i7-14700K', 419, 'CPU', 50, '../Image/Intel i7-14700K.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Intel i9-14900K', 589, 'CPU', 50, '../Image/Intel i9-14900K.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('NVIDIA RTX 4060', 299, 'GPU', 50, '../Image/NVIDIA RTX 4060.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('NVIDIA RTX 4070', 549, 'GPU', 50, '../Image/NVIDIA RTX 4070.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('NVIDIA RTX 4080', 1199, 'GPU', 50, '../Image/NVIDIA RTX 4080.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('NVIDIA RTX 4090', 1599, 'GPU', 50, '../Image/NVIDIA RTX 4090.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('AMD RX 7600', 269, 'GPU', 50, '../Image/AMD RX 7600.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('AMD RX 7700 XT', 449, 'GPU', 50, '../Image/AMD RX 7700 XT.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('AMD RX 7800 XT', 499, 'GPU', 50, '../Image/AMD RX 7800 XT.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('AMD RX 7900 XTX', 999, 'GPU', 50, '../Image/AMD RX 7900 XTX.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Corsair Vengeance RGB Pro 16GB', 90, 'RAM', 50, '../Image/Corsair Vengeance RGB Pro 16GB.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('G.Skill Trident Z RGB 32GB', 160, 'RAM', 50, '../Image/G.Skill Trident Z RGB 32GB.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Kingston HyperX Fury 16GB', 75, 'RAM', 50, '../Image/Kingston HyperX Fury 16GB.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Crucial Ballistix 32GB', 150, 'RAM', 50, '../Image/Crucial Ballistix 32GB.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Patriot Viper Steel 16GB', 80, 'RAM', 50, '../Image/Patriot Viper Steel 16GB.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Team T-Force Delta RGB 16GB', 85, 'RAM', 50, '../Image/Team T-Force Delta RGB 16GBjfif.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('ADATA XPG Spectrix D50 16GB', 85, 'RAM', 50, '../Image/ADATA XPG Spectrix D50 16GB.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Team Group Night Hawk RGB 32GB', 170, 'RAM', 50, '../Image/Team Group Night Hawk RGB 32GB.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Corsair Vengeance RGB DDR5 32GB', 130, 'RAM', 50, '../Image/Corsair Vengeance RGB DDR5 32GB.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('G.Skill Trident Z5 RGB 32GB', 185, 'RAM', 50, '../Image/G.Skill Trident Z5 RGB 32GB.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Kingston Fury Beast DDR5 16GB', 95, 'RAM', 50, '../Image/Kingston Fury Beast DDR5 16GB.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Team T-Force Delta RGB DDR5 32GB', 155, 'RAM', 50, '../Image/Team T-Force Delta RGB DDR5 32GB.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('ASUS ROG Strix Z790-E', 500, 'Motherboard', 50, '../Image/ASUS ROG Strix Z790-E.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('MSI MPG B550 Gaming Edge', 220, 'Motherboard', 50, '../Image/MSI MPG B550 Gaming Edge.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Gigabyte Z690 AORUS Elite', 300, 'Motherboard', 50, '../Image/Gigabyte Z690 AORUS Elite.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('ASRock B660 Steel Legend', 180, 'Motherboard', 50, '../Image/ASUS ROG Strix B550-F.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('EVGA Z590 FTW', 400, 'Motherboard', 50, '../Image/EVGA Z590 FTW.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('ASUS TUF Gaming B550-Plus', 160, 'Motherboard', 50, '../Image/ASUS TUF Gaming B550-Plus.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Gigabyte B660M DS3H', 140, 'Motherboard', 50, '../Image/ASUS ROG Strix B550-F.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('ASUS ROG Strix B550-F', 200, 'Motherboard', 50, '../Image/ASUS ROG Strix B550-F.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('WD Black SN850 1TB', 140, 'Storage', 50, '../Image/WD Black SN850 1TB.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Seagate Barracuda 2TB HDD', 70, 'Storage', 50, '../Image/Seagate Barracuda 2TB HDD.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('WD Blue 4TB HDD', 90, 'Storage', 50, '../Image/WD Blue 4TB HDD.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Crucial P5 Plus 2TB NVMe SSD', 280, 'Storage', 50, '../Image/Crucial P5 Plus 2TB NVMe SSD.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('EVGA SuperNOVA 750W', 130, 'Power Supply', 50, '../Image/EVGA SuperNOVA 750W.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Corsair CX650M 650W', 90, 'Power Supply', 50, '../Image/Corsair CX650M 650W.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Thermaltake Toughpower 850W', 160, 'Power Supply', 50, '../Image/Thermaltake Toughpower 850W.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('NZXT C850 850W', 170, 'Power Supply', 50, '../Image/NZXT C850 850W.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Corsair iCUE H100i RGB', 130, 'Cooling', 50, '../Image/Corsair iCUE H100i RGB.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('NZXT Kraken X63', 150, 'Cooling', 50, '../Image/NZXT Kraken X63.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Corsair H150i Elite Capellix', 200, 'Cooling', 50, '../Image/Corsair H150i Elite Capellix.jfif');
+INSERT INTO products (name, price, category, stock, image) VALUES ('Arctic Liquid Freezer II 280', 130, 'Cooling', 50, '../Image/Arctic Liquid Freezer II 280.jfif');

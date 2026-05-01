@@ -1,0 +1,10 @@
+.idea/
+
+# Node dependencies and local environment
+server/node_modules/
+server/.env
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log
